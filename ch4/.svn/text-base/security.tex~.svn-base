@@ -1,0 +1,71 @@
+
+\section{An ninh của máy tính}
+
+Bởi vì các hệ điều hành giám sát các hoạt động của máy tính, nên nó
+cũng đóng vai trò chính trong việc đảm bảo an ninh. Theo nghĩa rộng,
+nó có thể ở nhiều dạng, một trong số chúng là độ tin cậy. Nếu sai sót
+trong trình quản lý file gây ra mất dữ liệu của file, vậy file không
+an toàn. Nếu chương trình điều phối gây ra đổ vỡ hệ thống, làm mất dữ
+liệu ta mất cả giờ để đánh, vậy công việc của chúng ta không an
+toàn. Bởi vậy, an ninh của một hệ thống tính toán đòi hỏi hệ điều hành
+phải được thiết kế tốt và đáng tin cậy.
+
+Việc phát triển các phần mềm đáng tin cậy không phải là vấn đề nghiên
+cứu của hệ điều hành. Nó thuộc phạm vi của Công nghệ phần mềm, chúng
+ta sẽ xem xét sau trong Chương \ref{}. Trong phần này, chúng ta chỉ
+quan tâm đế các vấn đề an ninh liên quan riêng đến hệ điều hành.
+
+\subsection*{Tấn công từ bên ngoài}
+Một trong những nhiệm vụ quan trọng của hệ điều hành là bảo vệ tài
+nguyên của máy tính tránh khỏi các truy cập bất hợp lệ. Trong trường
+hợp hệ thống có nhiều người sử dụng, việc bảo vệ này dựa trên ``tài
+khoản'' (account)--một tài khoản được quản lý trong trong hệ điều hành
+như một mục gồm tên người dùng, mật khẩu và quyền truy cập gắn với
+người dùng. Hệ điều hành dùng các thông tin này trong mỗi lần đăng
+nhập (login) để điều khiển việc truy cập vào hệ thống.
+
+Các tài khoản được tạo bởi một người gọi là \textbf{super user} hay
+\textbf{người quản trị} (administrator). Người này có quyền cao nhất
+trong hệ thống, và cũng phải đăng nhập vào hệ thống để xác thực
+anh/chị ta là người quản trị (thường bởi tên và mật khẩu). Khi đã đăng
+nhập, người quản trị làm nhiều thay đổi bên trong hệ thống như: thay
+đổi gói phần mềm, gán quyền cho người dùng, thực hiện các hoạt
+động bảo trì hệ thống,...
+
+Dùng ``quyền rất cao'' này, người quản trị phải điều khiển hoạt động
+trong hệ thống để kiểm tra các hành vi phá hoại hệ thống, do vô tình
+hay cố ý. Cũng có nhiều phần mềm công cụ trợ giúp người quản trị, được
+gọi là \textbf{phần mềm kiểm tra} (auditing software). Nó ghi lại và
+phân tích các hoạt động xảy ra bên trong hệ thống. Ví dụ, phần mềm
+kiểm tra có thể cho biết những lần đăng nhập sai mật khẩu. Phần mềm
+kiểm tra cũng phát hiện các hoạt động của một tài khoản người dùng
+không phù hợp với các hành vi của người dùng này trong quá khứ, để từ
+đó chỉ ra những người dùng không có thẩm quyền đã giành được quyền
+truy cập vào tài khoản này. (ví dụ, với một người dùng bình thường chỉ
+dùng gói phần mềm xử lý văn bản và bảng tính, bây giờ lại dùng các ứng
+dụng phần mềm kỹ thuật cao hoặc thực hiện các gói công cụ không hợp lệ
+với quyền của anh ta.)
+
+Phần mềm kiểm tra cũng được thiết kế để phát hiện các \textbf{phần mềm
+sniffing}, là phần mềm khi được phép chạy trên hệ thống sẽ tìm cách
+ghi lại các hoạt động và sau đó thông báo lại cho kẻ xâm nhập
+(intruder). Một ví dụ tuy cũ nhưng được biết rộng rãi là một chương
+trình một phỏng thủ tục đăng nhập của hệ điều hành. Các chương trình
+như thế này có thể làm cho người dùng khác nhầm tưởng họ đang giao
+tiếp với hệ điều hành, và cung cấp tên và mật khẩu cho kẻ mạo danh.
+
+Với mọi sự phức tạp về mặt kỹ thuật được gắn với máy tính, thật đáng
+ngạc nhiên là rào cản chính của an ninh của máy tính là do sự thiếu
+thận trọng của người dùng. Họ chọn các mật khẩu rất dễ đoán (như tên
+và ngày sinh), họ chia sẻ mật khẩu của họ với bạn bè, họ không
+thay đổi mật khẩu thường xuyên, họ cài đặt các phần mềm có thể gây mất
+an toàn vào hệ thống
+
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

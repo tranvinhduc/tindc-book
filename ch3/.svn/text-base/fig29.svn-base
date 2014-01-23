@@ -1,0 +1,20 @@
+\setlength{\unitlength}{10pt}
+\begin{picture}(30,21)(-1,-2.5)
+\put(5,15) {\framebox (5,2){B}}
+\put(7.5,14.5){\vector(0,-1){12}}
+\put(4,0.5){Op-code là $B$ nghĩa là thay đổi}
+\put(4,-1){giá trị của bộ đếm chương trình }
+\put(4,-2.5) {nếu thanh ghi được chỉ giống thanh ghi $0$}
+
+\put(10,15){\framebox (5,2){2}}
+\put(12.5,14.5){\vector(0,-1){7}}
+\put(10,5.5){Chỉ ra thanh ghi nào được}
+\put(10,4){so sánh với thanh ghi $0$}
+
+\put(15,15){\framebox (5,2){5}}
+\put(20,15){\framebox (5,2){8}}
+\put(15,14.5) {\line(1,0){10}}
+\put(20,14.5){\vector(0,-1){1.5}}
+\put(18,12){Chỉ ra địa chỉ được đặt}
+\put(18,10.5){trong bộ đếm chương trình}
+\end{picture}

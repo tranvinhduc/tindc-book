@@ -1,0 +1,22 @@
+\setlength{\unitlength}{10pt}
+\begin{picture}(30,19)(-1,-1)
+\put(5,15) {\framebox (5,2){3}}
+\put(7.5,14.5){\vector(0,-1){12}}
+\put(4,0.5){Op-code là $3$ nghĩa là}
+\put(4,-1){ lưu nội dung của thanh ghi vào ô nhớ}
+
+\put(10,15){\framebox (5,2){5}}
+\put(12.5,14.5){\vector(0,-1){7}}
+\put(10,5.5){Phần toán hạng chỉ ra}
+\put(10,4){ thanh ghi nào để lưu trữ dữ liệu}
+
+
+
+\put(15,15){\framebox (5,2){A}}
+\put(20,15){\framebox (5,2){7}}
+\put(15,14.5) {\line(1,0){10}}
+\put(20,14.5){\vector(0,-1){1.5}}
+\put(18,12){Phần toán hạng chỉ ra}
+\put(18,10.5){địa chỉ của ô nhớ}
+\put(18,9){cần ghi dữ liệu vào}
+\end{picture}

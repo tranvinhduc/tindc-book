@@ -1,0 +1,212 @@
+\section{Kiến trúc Hệ điều hành}
+
+Để hiểu cấu thành của một hệ điều hành điển hình, đầu tiên chúng ta sẽ
+xem xét đầy đủ hình ảnh của các phần mềm tìm thấy bên trong một hệ
+thống máy tính điển hình. Sau đó chúng ta sẽ trọng tâm trên bản thân
+hệ điều hành.
+
+\subsection*{Tổng quan về Phần mềm}
+
+Cách tiếp cận của chúng ta về tổng quan của phần mềm trên một hệ thống
+máy tính điển hình là phân loại phân mềm.  Lược đồ phân loại phần mềm
+một cách bất biến cũng giống như cách mà người ta phân múi giờ để cộng
+đồng đặt đồng hồ chứ không có ý nghĩa khác biệt giữa sự xuất hiện của
+bình minh và hoàng hôn. Hơn nữa, trong trường hợp phân loại phần mềm,
+tính động của phần mềm và sự thiếu của định nghĩa bản quyền dẫn tới
+các thuật ngữ mâu thuẫn. Ví dụ, người sử dụng hệ điều hành Windows của
+Microsoft sẽ tìm thấy nhóm phần mềm ``Accessories'' và
+``Administrative Tool'' là những cái mà nằm trong cả phần ứng dụng và
+lớp công cụ. Phân loại sau đây nên xem như nghĩa của đạt được chỗ đứng
+trong một nghĩa mở rộng , tính động của chủ đề hơn là một khẳng định
+phổ dụng được chấp nhận trên thực tế.
+
+Chúng ta bắt đầu chia phần mềm máy tính thành hai phạm trù rộng:
+\textbf{phần mềm ứng dụng} và \textbf{phần mềm hệ thống} (Hình
+\ref{}). Phần mêm ứng dụng bao gồm các chương trình  để thực hiện các
+nhiệm vụ đặc biệt để sử dụng máy. Một máy được sử dụng để bảo trì việc
+kiểm kê hàng hoá tồn kho của nhà sản xuất sẽ chứa các phần mềm ứng
+dụng khác so với cái tìm thấy trên một máy được sử dụng bởi một kỹ sư
+điện tử. Các ví dụ phần mềm ứng dụng bao gồm bảng tính, hệ quản trị cơ
+sở dữ liệu, hệ thống xuất bản desktop, hệ thống kế toán, phần mềm phát
+triển chương trình và các trò chơi.
+
+Ngược lại với phần mềm ứng dụng là phần mềm hệ thống thực hiện các
+nhiệm vụ chung của hệ thống máy tính nói chung. Theo một nghĩa nào đó,
+phần mềm hệ thống cung cấp cơ sở hạ tầng  cái mà các phần mềm ứng dụng
+yêu cầu, theo cùng một cách như cơ sở hạ tầng của một quốc gia (chính
+phủ, đường đi lại, các nghành phục vụ, viện tài chính,...) cung cấp cơ
+sở trong đó người dân thành thị tin cậy cho cách sống của cá nhân họ.
+
+Bên trong các lớp của hệ thống phần mềm là hai phạm trù : một là bản
+thân hệ điều hành và những phần mềm khác bao gồm các đơn vị phần mềm
+tập hợp dưới dạng \textbf{phần mềm công cụ}. Phần lớn phần mềm công cụ
+cài đặt bao gồm chương trình để thực hiện các hoạt động cơ bản của máy
+tính nhưng không bao gồm trong hệ điều hành. Theo một nghĩa nào đó,
+phần mềm công cụ bao gồm các đơn vị phần mềm giúp mở rộng (cũng có thể
+để tuỳ biến) khả năng của hệ điều hành. Ví dụ, khả năng format một
+đĩa từ hoặc sao chép một files từ đĩa từ vào đĩa CD thường không cài
+đặt bởi hệ điều hành nhưng nó được cung cấp bởi phần mềm công
+cụ. Những thể hiện khác của công cụ phần mềm bao gồm phần mềm nén và
+giải nén dữ liệu, phần mềm để chơi trình diễn đa phương tiện, và phần
+mềm để thực hiện truyền thông trong mạng.
+
+Cài đặt một số hoạt động như phần mềm công cụ, cho phép phần mềm hệ
+thống có thể tuỳ biến nhu cầu của một sự thiết lập cụ thể dễ dàng hơn
+nếu chúng nằm trong hệ điều hành. Thật vậy, thông thường các công ty
+hoặc cá nhân phải thay đổi, hoặc thêm, công cụ phần mềm vào hệ điều
+hành của máy họ.
+
+Không may mắn, phân biệt giữa phần mềm ứng dụng và phần mềm công cụ có
+thể mơ hồ. Từ quan điểm nhìn, sự khác biệt là có chăng gói là một phần
+của cơ sở hạ tầng phần mềm của máy. Bởi vậy một ứng dụng mới liên quan
+đến tình trạng của công cụ nếu nó trở thành một công cụ cơ bản. Khi
+vẫn còn là  dự án nghiên cứu, phần mềm để truyền thông trên Internet đã
+được xem là phần mềm ứng dụng; ngày nay phần mềm kiểu này là cơ bản
+cho hầu hết việc sử dụng PC và bởi vậy nó được phân loại là phần mềm
+công cụ.
+
+Sự phân biệt giữa phần mềm công cụ và hệ điều hành cũng vẫn mập
+mờ. Đặc biệt, luật chống độc quyền ở Mỹ và Châu Âu đã đặt ra câu hỏi
+liên quan đến đơn vị như trình duyệt và media player là một thành phần
+của hệ điều hành của Microsoft hay là công cụ cái mà Microsoft đã bao
+gồm thuần túy chỉ để ép việc cạnh tranh.
+
+\subsection*{Các thành phần của một hệ điều hành}
+
+Chúng ta sẽ chú tâm vào thành phần bên trong lĩnh vực của một hệ điều
+hành. Để thực hiện hoạt động được yêu cầu bởi những người sử dụng máy
+tính, một hệ điều hành phải có thể giao tiếp với người dùng này. Thành
+phần của một hệ điều hành thực hiện việc giao tiếp này thường được gọi
+là \textbf{shell}. Các shell hiện đại thực hiện nhiệm vụ này thường
+theo hướng \textbf{giao diện đồ hoạ với người dùng} trong đó các đối
+tượng được thao tác như các files và chương trình, được biểu diễn bằng
+hình tượng trên màn hình như biểu tượng. Các hệ thống này cho phép đưa
+các lệnh cho người sử dụng bằng trỏ tới các biểu tượng bằng các thiết
+bị cầm tay được gọi là chuột và nhấn nút lên chuột (một xử lý được gọi
+là nhấp chuột). Các shells cũ hơn thường giao tiếp với người dùng qua
+thông điệp dạng văn bản sử dụng bàn phím và màn hình.
+
+Mặc dù shell của hệ điều hành đóng vai trò quan trọng trong thiết đặt
+các chức năng của máy, các shell này thuần tuý chỉ là giao diện giữa
+người dùng và trái tim thực sự của hệ điều hành (Hình \ref{}). Cách
+phân biệt giữa shell và phần bên trong của hệ điều hành như thế này
+nhấn mạnh bởi sự kiện rằng một vài hệ điều hành cho phép người dùng
+lựa chọn trong số các shell khác nhau để có một giao diện phù hợp với
+từng đối tượng người dùng cụ thể. Những người dùng của hệ điều hành
+UNIX, ví dụ, có thể lựa chọn một trong nhiều shell như Bourne shell, C
+shell, và Korn shell. Hơn nữa, những phiên bản trước của hệ điều hành
+Microsoft Windows đã được xây dựng về mặt cơ bản thay thế các shell
+dựa trên văn bản đang sử dụng với hệ điều hành MS-Dos bằng một shell
+kiểu giao diện đồ hoạ -- khung của hệ điều hành vẫn là MS-DOS.
+
+Một thành phần quan trọng bên trong các GUI shell của ngày nay là
+\textbf{chương trình quản lý cửa sổ}, với các khối được cấp phát của
+không gian màn hình, được gọi là cửa sổ, và lưu vết các ứng dụng được
+gắn với mỗi cửa sổ. Khi một ứng dụng muốn hiện một thứ gì đó ra màn
+hình, nó thống báo với trình quản lý cửa sổ, và trình quản lý cửa sổ
+sẽ đặt các hình ảnh mong đợi vào trong cửa sổ được gắn với ứng
+dụng. Lần lượng, khi một nút chuột được nhấn, chính trình quản lý cửa
+sổ sẽ tính toán vị trí của chuột trên màn hình và gọi ứng tựng thích
+hợp tương ứng với thao tác của chuột.
+
+Ngược lại với shell của hệ điều hành, phần bên trong của hệ điều hành
+được gọi là \textbf{nhân} (kernel). Một nhân của hệ điều hành chứa các
+thành phần phần mềm thực hiện các chức năng rất cơ bản yêu cầu bởi hệ
+thống máy tính. Một đơn vị kiểu như vậy là \textbf{trình quản lý
+  file}, công việc của nó là điều phối việc sử dụng làm dễ dàng các
+thiết bị lưu trữ khối của máy. Chính xác hơn, trình quản lý file chứa
+các bản ghi của mọi file nằm trong thiết bị lưu trữ khối, gồm cả nơi
+mà mỗi file được đặt, người sử dụng nào được phép truy cập vào file
+nào, và bộ phận nào của lưu trữ khối  là sẵn sàng cho các file mới
+hoặc mở rộng các files đã tồn tại. Các bản ghi này được giữ  ở một nơi
+lưu trữ trung gian chứa các file liên quan sao cho mỗi thời điểm nơi
+trung gian được đặt trực tuyến, trình quản lý file có thể nhận chúng
+và biết cái gì được lưu trữ ở phần trung gian.
+
+Để thích hợp với người dùng máy, hầu hết các trình quản lý files cho
+phép các files được nhớm lại dưới dạng \textbf{thư mục} (directory
+hoặc folder). Cách tiếp cận này cho phép người dùng tổ chức các files
+của anh hay chị ta theo mục đích bằng cách đặt các files có liên quan
+trong cùng một thư mục. Hơn nữa, bằng cách cho phép các thư mục chứa
+các thư mục khác, được gọi là thư mục con, một tổ chức theo kiểu phân
+cấp có thể được xây dựng. Ví dụ, một người dùng tạo ra một thư mục gọi
+là \texttt{MyRecords} có chứa các thư mục con là
+\texttt{FinancialRecord} \texttt{MedicalRecords} và
+\texttt{HouseHoldRecord}. Bên trong mỗi thư mục con có thể có các file
+ở một phạm trù đặc biệt (Người sử dụng hệ điều hành Windows có thể hỏi
+trình quản lý file để hiện tập các thư mục hiện hành bằng cách thực
+hiện chương trình Windows Explorer).
+
+Một đường đi tới một thư mục bên trong các thư mục được gọi là
+\textbf{đường dẫn thư mục}. Đường dẫn thường được biểu diễn bằng cách
+liệt kê các thư mục dọc theo đường đi ngăn cách bởi dấu gạch chéo. Ví
+dụ, \texttt{animals/prehistoric/dinosaurs} có thể biểu diễn đường dẫn
+bắt đầu từ thư mục có tên là \texttt{animals}, qua thư mục con có tên
+là \texttt{prehistoric}, và kết thúc trong thư mục con
+\texttt{dinosaurs}. (Với người dùng Windows dấu gạch xuôi được thay
+bằng dấu gạch ngược lại như
+\texttt{animals$\backslash$prehistoric$\backslash$dinosaurs}).
+
+Mọi sự truy cập tới một file bởi một đơn vị phần mềm khác có thể được
+là bởi sự suy xét của trình quản lý file. Thủ tục bắt đầu bằng cách
+yêu cầu trình quản lý file kiểm tra quyền truy cập tới file qua một
+thủ tục gọi là mở file. Nếu trình quản lý file đồng ý với yêu cầu truy
+cập, nó cung cấp thông tin cần để tìm và thao tác file. Thông tin này
+được lưu trữ trong một vùng nhớ được gọi là \textbf{bộ mô tả file}
+(file descriptor). Nó tham chiếu tới các thông tin trong bộ mô tả file
+này cái mà các thao tác riêng được thực hiện trên file này.
+
+Các thành phần khác của nhân bao gồm một tập các \textbf{bộ điều khiển
+  thiết bị}, là đơn vị phần mềm truyền thông với các bộ điều khiển
+(hoặc tại thời điểm, trực tiếp với thiết bị ngoại vi) để thực hiện các
+thao tác trên các thiết bị ngoại vi gắn với máy. Mỗi thiết bị được
+thiết kế một cách duy nhất cho kiểu đặc biệt của thiết bị (như máy in,
+điều khiển đĩa, hoặc màn hình) và dịch các yêu cầu chung thành các
+bước kỹ thuật hơn được yêu cầu bởi được gán với bộ điều khiển. Ví dụ,
+một bộ điều khiển thiết bị máy in chứa các phần mềm đọc và giải mã các
+từ mô tả trạng thái của máy in cũng như cách bắt tay khác. Bởi vậy,
+các thành phần phần mềm khác không giải quyết về mặt kỹ thuật cho vấn
+đề in file. Thật vậy, các thành phần khác có thể đơn thuần là dựa vào
+phần mềm điều khiển thiết bị để in file, còn làm chi tiết thế nào nó
+để lại cho bộ điều khiển thiết bị. Bằng cách này, việc thiết kế của
+các đơn vị phần mềm khác nhau không bị phụ thuộc vào đặc trưng của
+thiết bị cụ thể. Kết quả là ta có thể tuỳ biến hệ điều hành cho các
+thiết bị ngoại vi đặc biệt đơn thuần bằng cách cài đặt thêm trình điều
+khiển thiết bị thích hợp.
+
+Một thành phần khác của nhân hệ điều hành là \textbf{quản lý bộ nhớ},
+nó chịu trách nhiệm điều phối việc sử dụng bộ nhớ chính. Nhiệm vụ kiểu
+này là tối thiểu trong môi trường mà máy tính chỉ phải thực hiện một
+chương trình tại một thời điểm. Trong trường hợp này, chương trình
+thực hiện nhiệm vụ hiện hành đã được đặt trong bộ nhớ, sau khi nó được
+thực hiện, bộ nhớ sẽ được thay thế bởi chương trình thực hiện nhiệm vụ
+tiếp theo. Tuy nhiên, trong môi trường đa người dùng hay đa nhiệm
+trong đó mỗi máy tính phải thoả mãn nhiều nhu cầu tại cùng một thời
+điểm thì việc quản lý bộ nhớ là nặng nề. Trong các trường hợp này,
+nhiều chương trình và khối dữ liệu phải đồng thời nằm trong bộ
+nhớ. Bởi thế, trình quản lý bộ nhớ phải tìm và gán không gian bộ nhớ
+cho các nhu cầu này và đảm bảo rằng các hoạt động của mỗi chương trình
+bị hạn chế trong không gian được cấp phát. Hơn nữa, bởi vì nhu cầu của
+các hoạt động khác nhau đến và đi, trình quản lý bộ nhớ phải nắm bắt
+được các vùng nhớ nào không bị còn bận nữa.
+
+Nhiệm vụ của trình quản lý bộ nhớ phức tạp hơn khi tổng số không gian
+bộ nhớ yêu cầu lớn hơn so với không gian thực sự có trong máy
+tính. Trong trường hợp này trình quản lý bộ nhớ có thể tạo ra cảm giác
+có không gian lưu trữ thêm bằng cách chuyển chương trình và dữ liệu
+qua lại giữa bộ nhớ chính và phần lưu trữ khối (một kỹ thuật gọi là
+\textbf{phân trang}). Giả sử rằng, yêu cầu bộ nhớ chính là $1024$MB
+nhưng máy tính chỉ có $512$MB. Để tạo ra cảm giác có không gian lưu
+trữ lớn hơn, trình quản lý bộ nhớ dành $1024$MB củng không gian lưu
+trữ trên đĩa từ. Nơi này lưu trữ các mẫu bít đáng nhẽ phải nằm trong
+bộ nhớ chính nếu bộ nhớ chính có khả năng thực sự $1024$MB. Dữ liệu
+này được chia thành các đơn vị có kích thước chuẩn gọi là
+\textbf{các trang},
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

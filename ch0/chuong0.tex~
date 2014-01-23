@@ -1,0 +1,27 @@
+
+\chapter{Giới thiệu chung} 
+\minitoc
+\vspace{0.5cm}
+\noindent
+% Trong chương này, ta xem xét phạm vi của khoa học máy tính, lịch sử phát triển và các kiến
+% thức nền tảng chuẩn bị cho các chương tiếp theo.
+Khoa học máy tính là một chuyên ngành nhằm xây dựng cơ sở khoa học cho những lĩnh vực như
+thiết kế máy tính, lập trình, xử lý thông tin, thuật toán, giải quyết vấn đề dựa
+trên thuật toán, và cả quá trình xây dựng thuật toán. Nó cung cấp nền tảng cho các ứng
+dụng tin học hiện tại cũng như tương lai.
+
+Cuốn sách này nhằm giới thiệu một cách tổng quan về khoa học máy tính. Tuy nhiên, ta cũng muốn đánh
+giá đầy đủ phạm vi và tính động của ngành học này; vì vậy, ngoài các chủ đề nghiên cứu
+chính, ta còn xem xét đến lịch sử phát triển, hiện trạng, và những hướng nghiên cứu trong tương lai. Mục tiêu của cuốn sách là giúp người đọc hiểu về các chức
+năng của khoa học máy tính--những kiến thức này không những có ích cho những người làm
+nghiên cứu mà còn cho cả những người làm trong lĩnh vực ứng dụng công nghệ.
+ 
+\input{ch0/role.tex}
+\input{ch0/origins.tex}
+\input {ch0/algorithms.tex}
+\input {ch0/abstraction.tex}
+  
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

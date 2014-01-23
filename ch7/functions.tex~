@@ -1,0 +1,103 @@
+\section{Các hàm và tính toán}
+Trước khi thảo luận về khả năng của máy tính, ta môt tả mối liên hệ giữa giải quyết bài
+toán và tính toán hàm.
+
+Một \textit{hàm} theo nghĩa toán học là một tương ứng giữa một tập các giá trị đầu vào và
+một tập các giá trị đầu ra sao cho với mỗi đầu vào ta chỉ có tương ứng một đầu ra duy
+nhất. Một ví dụ là hàm là chuyển đơn vị yard thành mét. Ở đây, mỗi giá trị tính theo yard
+được đặt tương ứng với một giá trị tính theo mét và hai giá trị này phải phản ánh cùng một
+độ dài. Một ví dụ khác là hàm sắp xếp, nó gắn mỗi danh sách các giá trị số đầu vào với
+danh sách các giá trị số đầu ra chính là dãy đầu vào nhưng đã được sắp xếp theo chiều tăng
+dần. Một ví dụ khác nữa là hàm cộng, nó gắn một cặp giá trị số đầu vào với một giá trị đầu
+ra là tổng của cặp số đó.
+
+Quá trình xác định các giá trị đầu ra cụ thể tương ứng với giá trị đầu vào được gọi là
+\textit{việc tính toán các hàm}. Khả năng tính toán các hàm là quan trong bởi vì chính
+cách tính toán các hàm mà ta có thể giải quyết các bài toán. Ví dụ, để giải bài toán cộng,
+ta phải tính toán hàm cộng; để sắp xếp một danh sách, ta phải tính toán hàm sắp xếp. Theo
+cách này, một nhiệm vụ cơ bản của khoa học máy tính là tìm cách tính toán các hàm liên
+quan đến bài toán mà ta muốn giải quyết.
+
+Ta xem xét một hệ thống trong đó các đầu vào và đầu ra của hàm có thể được xác định trước
+và ghi trong một bảng. Mỗi khi cần tính đầu vào của hàm, ta chỉ cần tìm vị trí đầu vào ở
+trong bảng và ở vị trí tương ứng ta tìm thấy đầu ra. Bởi vậy việc tính toán các hàm được
+rút gọn thành quá trình tìm kiếm trong bảng. Các hệ thống kiểu này tiện lợi nhưng bị giới
+hạn do có nhiều hàm không thể được biểu diễn đầy đủ theo dạng bảng. Ví dụ là bảng ở
+Hình~\ref{fig:fig111}, bảng này cố gắng biểu diễn hàm chuyển đơn vị đo từ yard sang
+mét. Rõ ràng bảng này không đầy đủ bởi vì danh sách các khả năng cho cặp đầu vào/đầu ra là
+không bị giới hạn.
+
+\begin{figure}
+\label{fig:fig111}
+  \begin{center}
+    \begin{tabular}{cc}
+      \hline
+      \textbf{Yard}      & \textbf{Mét}      \\
+      \textbf{(đầu vào)} & \textbf{(đầu ra)} \\ \hline
+      $1$                & $0.9144$          \\
+      $2$                & $1.8288$          \\
+      $3$                & $2.7432$          \\
+      $4$                & $3.6576$          \\
+      $5$                & $4.5720$          \\
+      $\vdots$           & $\vdots$          \\
+      \hline
+    \end{tabular}
+  \end{center}
+\caption{Biểu diễn không đầy đủ của hàm chuyển đơn vị đo yard thành mét }
+\end{figure}
+
+
+Một cách tiếp cận khác hiệu quả hơn để tính toán hàm là dùng công thức đại số thay vì cố
+gắng liệt kê mọi tổ hợp đầu vào/đầu ra trong một bảng. Ví dụ, ta có thể dùng công thức đại
+số:
+\[
+V = P (1 + r)^n
+\]
+để mô tả cách tính giá trị của một khoản đầu tư $P$ sau $n$ năm biết tỉ lệ lãi kép là $r$.
+
+Nhưng khả năng biểu diễn của các công thức đại số cũng có giới hạn. Có những hàm mà quan
+hệ giữa đầu vào và đầu ra quá phức tạp để mô tả theo cách này. Ví dụ các hàm lượng giác
+như $\sin$ hoặc $\cos$. Nếu cần tính toán $\sin$ của góc $38$ độ, bạn phải vẽ tam giác
+thích hợp, đo các cạnh của nó, và tính toán tỉ lệ mong đợi--đây là một quá trình không thể
+biểu diễn dùng các phép toán đại số của giá trị $38$. Tất nhiên, máy tính cầm tay của bạn
+có thể cố gắng tính được $\sin$ của góc $38$ độ. Thực ra, nó cố gắng áp dụng các kỹ thuật
+toán học tinh tế để đạt được một giá trị xấp xỉ khá tốt với $\sin$ của $38$ độ, và ghi ra
+kết quả cho bạn.
+
+Ta đã thấy, với hàm phức tạp, ta phải áp dụng các kỹ thuật phức tạp để tính toán. Một câu
+hỏi đặt ra là phải chăng với một hàm phức tạp tuỳ ý, ta luôn tìm thấy một hệ thống để tính
+toán nó. Câu trả lời là không. Một kết quả đặc sắc trong Toán học khẳng định rằng có những
+hàm không thể được xác định dựa trên quá trình từng bước xác định đầu ra dựa trên các giá
+trị đầu vào. Các hàm này được gọi là hàm không tính được; còn các hàm mà các đầu ra có thể
+được xác định từ đầu vào bằng phương pháp thuật toán được gọi là \textit{tính được}.
+
+Việc phân biệt giữa các hàm tính được và không tính được là rất quan trọng trong khoa học
+máy tính. Bởi vì các máy chỉ có thể thực hiện các nhiệm vụ được mô tả bởi thuật toán, nên
+việc nghiên cứu các hàm tính được chính là nghiên cứu khả năng của máy. Nếu ta xác định
+được các chức năng cần thiết để một máy có thể tính được mọi hàm tính được thì việc xây
+dựng các máy có đủ các chức năng này đảm bảo rằng chúng có mọi khả năng mà ta có thể mong
+muốn. Ngược lại, nếu ta khám phá ra rằng lời giải của một bài toán cho trước đòi hỏi phải
+tính một hàm không tính được, vậy ta có thể kết luận rằng lời giải của bài toán đó vượt ra
+ngoài khả năng của máy.
+
+\subsection*{Câu hỏi \& Bài tập}
+\begin{enumerate}
+\item Hãy chỉ ra một vài hàm có thể biểu diễn đầy đủ dưới dạng bảng.
+
+\item Hãy chỉ ra một vài hàm mà đầu ra của nó có thể được mô tả bởi các biểu thức đại số
+  theo đầu vào.
+
+\item Hãy chỉ ra một hàm không thể mô tả dùng công thức đại số. Dù thế, có phải hàm này là
+  tính được?
+
+\item Các nhà toán học cổ Hy Lạp đã biết cách dùng thước thẳng và com-pa để vẽ hình. Họ đã
+  phát triển các kỹ thuật tìm trung điểm của đoạn thẳng, dựng các góc vuông, và vẽ các tam
+  giác đều. Tuy vậy, có những ``tính toán'' gì mà ``hệ thống tính toán'' của họ không thực
+  hiện được?
+\end{enumerate}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

@@ -1,0 +1,19 @@
+\chapter{Lưu trữ dữ liệu}
+\label{chap:chuong1}
+\minitoc
+Trong chương này chúng ta sẽ xem xét cách  dữ liệu được biểu diễn và
+lưu trữ trong máy tính.  Cụ thể, chúng ta sẽ xem xét cách biểu diễn
+của văn bản, giá trị số, âm thanh, hình ảnh và video. Nhiều thông tin
+trong chương này cũng thích hợp với các lĩnh vực khác như ảnh số, sản
+xuất và thu âm audio/video, và truyền thông với khoảng cách xa.
+
+  
+\input {ch2/bits.tex}   
+\input {ch2/mainMemory.tex}
+\input {ch2/reprentationInfo.tex}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 
+ 

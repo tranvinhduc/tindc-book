@@ -1,0 +1,154 @@
+\section{Bài tập cuối chương}
+  
+
+\begin{multicols}{2}
+  \begin{enumerate}
+  \item Liệt kê bốn hoạt động của một hệ điều hành điển hình.
+
+  \item Tóm tắt sự khác nhau giữa xử lý theo lô và xử lý tương tác.
+
+  \item Ta đặt (theo thứ tự) ba phần tử $R, S$ và $T$ vào trong một
+    hàng đợi. Đầu tiên, ta lấy hai phần tử ra khỏi hàng đợi và đặt
+    thêm một phần tử $X$ vào hàng đợi. Sau đó, ta lại lấy tiếp hai
+    phần tử ra khỏi hàng đợi, và lại đặt thêm hai phần tử $Y, Z$ (theo
+    thứ tự) vào hàng đợi, và sau đó lấy hết các phần tử cho đến khi
+    hàng đợi rỗng. Hãy liệt kê các phần tử trong hàng đợi theo thứ tự
+    mà chúng bị lấy ra.
+
+  \item Chỉ ra sự khác biệt giữa xử lý tương tác và xử lý thời gian
+    thực.
+
+  \item Hệ điều hành đa nhiệm là gì?
+
+  \item Giả sử bạn có một máy PC, hãy chỉ ra một vài tình huống bạn
+    thấy rõ lợi thế của khả năng đa nhiệm của nó.
+
+  \item Hãy chỉ ra hai phần mềm ứng dụng và hai phần mềm công cụ mà
+    bạn quen thuộc.
+
+  \item Cấu trúc thư mục được mô tả bởi đường dẫn X/Y/Z là gì?
+
+  \item Bảng mô tả tiến trình chứa những thông tin gì?
+
+  \item Chỉ ra sự khác nhau giữa tiến trình sẵn sàng và tiến trình
+    đang đợi.
+
+  \item Nêu sự khác nhau giữa bộ nhớ ảo và bộ nhớ chính.
+
+  \item Giả sử máy tính của bạn có $512$MB (MiB) bộ nhớ chính, và một
+    hệ điều hành cần tạo một bộ nhớ ảo gấp hai lần kích thước bộ nhớ
+    chính với kích thước các trang được dùng là $2$KB (KiB). Có bao
+    nhiêu trang có thể được yêu cầu.
+
+  \item Vấn đề phức tạp gì xảy ra trong hệ thống chia sẻ thời gian
+    thực nếu hai tiến trình yêu cầu truy cập vào cùng một file tại
+    cùng một thời điểm? Có trường hợp nào mà trình quản lý file nên
+    cho phép các yêu cầu kiểu này? Có trường hợp nào mà trình quản lý
+    file nên cấm các yêu cầu kiểu này?
+
+  \item Định nghĩa cân bằng tải và tỷ xích (scaling) trong ngữ cảnh của kiến
+    trúc đa bộ xử lý.
+
+  \item Tóm tắt quá trình khởi động máy.
+
+  \item Giả sử bạn có một máy PC, hãy ghi lại dãy các hoạt động mà bạn
+    quan sát được khi bật máy. Sau đó hãy xác định các thông điệp được
+    hiện lên màn hình máy tính trước khi quá tình khởi động thực sự
+    bắt đầu. Phần mềm gì viết các thông điệp này?
+
+  \item Giả sử rằng hệ điều hành chia sẻ thời gian thực cấp phát các
+    time slide $20$mili giây và máy thực hiện trung bình $5$ lệnh
+    trong một micro giây. Vậy máy có thể thực hiện bao nhiêu lệnh
+    trong một time slide?
+
+  \item Nếu một người đánh được $60$ từ trong một phút (một từ được
+    xem là gồm $5$ ký tự), vậy mỗi ký tự người đó đánh mất bao lâu?
+    nếu người đó dùng một hệ điều hành chia sẻ thời gian thực cấp phát
+    time slide theo đơn vị $20$ mili giây và chúng ta bỏ qua việc
+    chuyển đổi giữa các tiến trình, vậy có bao nhiêu time-slide có thể
+    được cấp phát giữa lúc hai ký tự được đánh?
+
+
+  \item Giả sử một hệ điều hành chia sẻ thời gian thực đang chia
+    time-slide $50$ milli giây. Nếu bình thường đầu đọc/ghi đĩa mất
+    $8$ milli giây để chuyển tới track mong muốn và mất thêm $17$ mili
+    giây để tới dữ liệu mong muốn, vậy một chương trình mất bao nhiêu
+    time slide để đợi thao tác đọc đĩa hoàn thành? Nếu máy có khả năng
+    thực hiện mười lệnh mỗi micro giây, bao nhiêu lệnh có thể thực
+    hiện trong khi đợi chu kỳ này? (Đây là lý do tại sao khi một tiến
+    trình thực hiện một thao tác với thiết bị ngoại vi, hệ thống chia
+    sẻ thời gian thực kết thúc time slide của tiến trình này và cho
+    phép tiến trình khác chạy trong khi tiến trình ban đầu đợi phục vụ
+    của thiết bị ngoại vi.)
+
+
+  \item Liệt kê năm nguồn tài nguyên mà hệ điều hành đa nhiệm phải
+    điều phối việc truy cập.
+
+
+  \item Một tiến trình được gọi là I/O-bound nếu nó yêu cầu nhiều phép
+    toán vào/ra, còn một tiến trình được gọi là compute-bound nếu hầu
+    hết thời gian thực hiện nó dành cho việc tính toán. Giả sử có hai
+    tiến trình, một là I/O-bound và một là compute-bound, đang cùng
+    đợi một time-slide, vậy ta nên ưu tiên tiến trình nào? Tại sao?
+
+  \item Trong một hệ thống chia sẻ thời gian thì hiệu suất chạy hai
+    tiến trình I/O bound tốt hơn hay chạy một tiến trình I/O bound và
+    một compute-bound tốt hơn? Tại sao?
+
+  \item Viết các chỉ thị mà bộ điều phối của hệ điều hành phải làm khi
+    một tiến trình hết time slide.
+
+  \item Trạng thái của tiến trình gồm những thành phần gì?
+
+  \item Chỉ ra một tình huống mà một tiến trình trong hệ thống chia sẻ
+    thời gian thực không dùng hết time slide được cấp cho nó.
+
+  \item Liệt kê theo thứ tự thời gian các sự kiện xuất hiện khi một
+    tiến trình bị ngắt.
+
+  \item Trả lời các câu hỏi sau đây theo hệ điều hành bạn đang dùng:
+    \begin{enumerate}[a.]
+    \item Làm thế nào để yêu cầu hệ điều hành copy một file từ vị
+      trí này tới vị trí khác?
+
+    \item Làm thế nào để xem các thư mục trên đĩa?
+
+    \item Làm thế nào để yêu cầu hệ điều hành thực hiện một chương trình?
+    \end{enumerate}
+
+  \item Trả lời các câu hỏi sau đây theo hệ điều hành bạn đang dùng:
+    \begin{enumerate}[a.]
+    \item Làm thế nào hệ điều hành hạn chế truy cập chỉ cho những
+      người được phép?
+
+    \item Làm thế nào để yêu cầu hệ điều hành chỉ ra các tiến trình
+      hiện đang có trong bảng tiến trình?
+
+    \item Làm thế nào để bảo hệ điều hành rằng bạn không muốn người
+      dùng khác truy cập vào file của bạn?
+    \end{enumerate}
+
+  \item Làm thế nào một hệ điều hành giữ không cho một tiến trình truy
+    cập vào không gian bộ nhớ của tiến trình khác?
+
+  \item Giả sử một mật khẩu bao gồm một xâu chín ký tự trong bảng chữ
+    cái Tiếng Anh ($26$ ký tự). Nếu mỗi mật khẩu có thể được kiểm tra
+    trong một milli giây, vậy mất bao lâu có thể kiểm tra mọi mật khẩu
+    có thể?
+
+  \item Tại sao các CPU thiết kế cho hệ điều hành đa nhiệm lại cần
+    phân chia các thao tác theo các mức đặc quyền khác nhau?
+
+  \item Hãy chỉ ra hai hoạt động yêu cầu các lệnh đặc quyền?
+
+  \item Hãy chỉ ra ba cách mà một tiến trình có thể gây mất an toàn
+    cho hệ thống máy tính nếu hệ điều hành không ngăn chặn.
+  \end{enumerate}
+\end{multicols}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

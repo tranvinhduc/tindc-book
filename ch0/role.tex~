@@ -1,0 +1,135 @@
+
+\section{Vai trò của thuật toán}
+
+Ta bắt đầu với khái niệm cơ bản nhất của khoa học máy tính--khái niệm thuật toán. Hiểu nôm
+na, một \textbf{thuật toán} là một dãy các bước xác định cách thực hiện một nhiệm vụ nào
+đó.  (Ta sẽ định nghĩa một cách chính xác hơn trong Chương \ref{}.) Ví dụ, thuật toán
+để nấu ăn (gọi là công thức nấu ăn), thuật toán để tìm đường (hay còn gọi là chỉ đường),
+thuật toán để vận hành máy giặt (thường được ghi bên trong nắp của máy giặt hoặc trên
+tường của hiệu giặt tự động), thuật toán để chơi nhạc (thể hiện dưới dạng các bản
+nhạc), và có thuật toán để chơi trò  magic tricks (Hình \ref{fig:fig0.1}).
+\begin{comment}
+\begin{figure}
+  \begin{quotation}
+    \noindent
+    \textbf{Luật chơi:} Nhà ảo thuật lấy vài quân bài từ bộ bài chuẩn đặt úp xuống bàn và
+    tráo chúng cẩn thận trước khi trải chúng lên bàn. Sau đó người chơi được yêu cầu lấy
+    các quân bài hoặc quân đỏ, hoặc quân đen, và nhà ảo thuật sẽ lật quân bài đúng màu
+    được yêu cầu.
+
+    \vspace{0.5cm}
+    \noindent
+    \textbf{Làm ra vẻ bí mật và nói một cách máy móc theo chỉ dẫn dưới đây:}
+    \begin{description}
+    \item[Bước 1] Từ bộ bài chuẩn, chọn muời cây đỏ và mười cây đen. Đặt các quân bài này
+      ngửa lên thành hai cột theo màu.
+
+    \item[Bước 2] Thông báo rằng bạn sẽ chọn một vài quân đỏ và một vài quân đen.
+
+    \item[Bước 3] Chọn các quân bài đỏ. Giả vờ xếp chúng vào trong bộ bài nhỏ, nhưng thực
+      ra vẫn giữ chúng úp mặt trong tay trái và, với ngón tay cái và ngón trỏ của bàn tay
+      phải, kéo quân cuối cùng của bộ bài lên sao cho mỗi quân bị bẻ hơi cong về
+      \textit{phía sau}. Sau đó đặt quân bài màu đỏ xuống bàn và nói, ``Đây là quân đỏ đã
+      được bố trí trước trong bộ bài.''
+
+    \item[Bước 4] Chọn các quân đen. Theo cách tương tự như bước 3, đưa các quân này về
+      \textit{phía trước}. Sau đó đưa trả quân bài này về bàn và nói, ``Và đây là quân bài
+      màu đen đã được bố trí trước.''
+
+    \item[Bước 5] Ngay sau khi trả quân bài đen trở lại bàn, cả hai tay trộn quân bài màu
+      đen (vẫn úp) như bạn căng ra trên bàn. Giải thích rằng bạn đang trộn cẩn thận các
+      quân bài.
+
+    \item[Bước 6] Trong khi bỏ quân bài xuống bàn, lặp lại các bước sau đây:
+      \begin{enumerate}
+      \item Hỏi người chơi xem yêu cầu quân đỏ hay quân đen.
+
+      \item Nếu màu được yêu cầu là màu đỏ và có một vết lõm xuất hiện trên quân bài đặt
+        xuống, lật quân bài lên và nói, ``Đây là quân đỏ''.
+
+      \item Nếu quân bài được yêu cầu là màu đen và có một vết lõm trên quân bài đặt
+        xuống, lật quân bài và nói ``Đây là quân đen''.
+
+      \item Ngược lại, khẳng định rằng không còn quân bài nào có màu được yêu cầu và đặt
+        các quân bài còn lại xuống bàn và lật lên để chứng minh khẳng định của mình.
+      \end{enumerate}
+    \end{description}
+  \end{quotation}
+  \caption{Một thuật toán cho một magic trick}
+  \label{fig:fig0.1}
+\end{figure}
+\end{comment}
+
+Trước khi một máy (kiểu như máy tính) có thể thực hiện một nhiệm vụ nào đó, ta phải tìm ra
+một thuật toán để thực hiện nhiệm vụ đó và biểu diễn nó dưới dạng thích hợp với máy. Một
+biểu diễn của một thuật toán được gọi là một \textbf{chương trình}. Để thuận tiện cho con
+người, các chương trình  thường được in trên giấy hoặc hiển thị trên màn hình máy
+tính. Để thuận tiện cho máy, các chương trình được mã hóa thích hợp với công
+nghệ của máy. Quá trình phát triển một chương trình, mã hóa nó dưới dạng thích hợp, và đưa nó vào máy tính được gọi là \textbf{lập trình}. Chương trình và các thuật
+toán mà nó biểu diễn được gọi chung là \textbf{phần mềm}; còn máy được gọi là
+\textbf{phần cứng}.
+
+Ban đầu việc nghiên cứu về thuật toán được xem là một nghành thuần túy toán học.  Các nhà toán học đã nghiên cứu thuật toán từ rất lâu trước khi có sự xuất hiện của máy tính,. Mục tiêu của họ
+là tìm ra một tập các chỉ dẫn để mô tả hướng giải quyết của một lớp bài toán thuộc cùng
+một dạng đặc biệt. Một ví dụ nổi tiếng  là
+thuật toán chia để tìm thương của hai số có nhiều chữ số. Một ví dụ khác là thuật toán
+Euclid, được tìm thấy bởi nhà toán học cổ Hy Lạp Euclid, để tìm ước chung nhỏ lớn nhất của
+hai số nguyên~(Hình~\ref{fig:fig0.2}).
+
+Sau khi đã tìm được một thuật toán thực hiện một nhiệm vụ cho trước, ta có thể thực hiện
+nhiệm vụ này mà không cần phải hiểu thuật toán đó dựa trên nguyên lý gì. Việc thực hiện
+nhiệm vụ bây giờ chỉ đơn giản là làm đi theo các chỉ dẫn. Ví dụ, ta có thể
+thực hiện thuật toán chia để tìm thương hoặc thuật toán Euclid để tìm ước chung lớn nhất mà
+không cần hiểu tại sao lại làm được như vậy.  Theo một nghĩa nào đó, trí tuệ cần thiết để
+giải các bài toán này đã được mã hoá dưới dạng thuật toán.
+
+
+
+\begin{figure}[tb]
+  \begin{quotation}
+    \noindent
+    \textbf{Mô tả:} Thuật toán này nhận đầu vào là hai số nguyên dương và thực hiện tính
+    ước chung lớn nhất của hai giá trị này.
+
+    \vspace{0.5cm}
+    \noindent
+    \textbf{Thủ tục:}
+    \begin{description}
+    \item[Bước 1] Với hai số đầu vào, ta gán $M$ là số lớn và $N$ là số nhỏ.
+
+    \item[Bước 2] Chia $M$ cho $N$, và đặt phần dư là $R$.
+
+    \item[Bước 3] Nếu $R$ khác $0$ thì gán $M$ là giá trị của $N$, gán lại~$N$ là giá trị
+      của~$R$, và quay trở lại bước $2$; ngược lại, ước chung lớn nhất là giá trị hiện
+      thời đang được gán cho $N$.
+    \end{description}
+  \end{quotation}
+  \caption{Thuật toán Euclid để tìm ước chung lớn nhất của hai số nguyên dương}
+  \label{fig:fig0.2}
+\end{figure}
+
+
+Nhờ việc ta có thể truyền tải trí thông minh dưới dạng thuật toán mà ta có thể tạo nên các
+máy thực hiện các nhiệm vụ mà ta mong muốn. Như vậy có nghĩa là mức độ thông minh của máy
+sẽ chỉ giới hạn trong việc những trí thông minh có thể truyền tải thành thuật toán. Ta chỉ
+có thể xây dựng một máy để thực hiện một nhiệm vụ nếu tồn tại một thuật toán để thực hiện
+nhiệm vụ đó. Ngược lại, nếu không có thuật toán để giải một bài toán thì việc giải quyết
+bài toán này nằm ngoài khả năng của máy.
+
+
+Việc phát hiện ra giới hạn của phương pháp thuật toán đã trở thành một chủ đề của toán học
+từ những năm 1930 với công trình của Kurt G\"odel về định lý không toàn vẹn
+(incompleteness theorem). Định lý này về cơ bản khẳng định rằng trong mọi lý thuyết toán
+học có chứa số học các số tự nhiên, có tồn tại những khẳng định mà việc quyết định nó đúng
+hay sai không thể được xác định theo nghĩa của thuật toán. Nói một cách ngắn gọn, mọi nghiên cứu
+đầy đủ  về hệ thống số học nằm ngoài khả năng của các hoạt động thuật toán.
+
+Phát hiện này đã làm lung lay cơ sở toán học. Người ta đã bắt đầu một lĩnh vực mới gọi là
+khoa học máy tính, chuyên nghiên cứu khả năng của phương pháp thuật toán.
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

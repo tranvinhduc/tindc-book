@@ -1,0 +1,35 @@
+\chapter{Lý thuyết tính toán}
+\minitoc
+\vspace{0.5cm}
+
+\noindent
+Trong chương này chúng ta sẽ xem xét lý thuyết cơ sở của khoa học máy tính. Theo một nghĩa
+nào đó, nội dung trong chương này đưa khoa học máy tính lên vị thế của một nghành khoa học
+chính xác. Mặc dù chúng có vẻ hơi trừu tượng, nhưng những kiến thức này có rất nhiều ứng
+dụng thực tế. Đặc biệt, chúng ta sẽ khám phá các kết quả liên quan đến khả năng của các
+ngôn ngữ lập trình và giải thích cách mà các hệ thống mã hoá hiện nay được sử dụng trong
+giao tiếp trên Internet.
+
+%
+    
+Trong chương này ta xem xét đến khả năng của máy tính. Ta sẽ thấy làm thế nào một máy đơn
+giản, gọi là máy Turing, lại được dùng để xác định biên giới giữa các bài toán có thể được
+giải được bằng máy tính và các bài toán không thể. Ta cũng sẽ xem xét một bài toán đặc
+biệt, gọi là bài toán dừng, mà việc giải nó vượt ra ngoài khả năng của hệ thống tính toán;
+bởi vậy lời giải của nó cũng nằm ngoài khả năng của máy tính ngày nay cũng như các máy
+tính trong tương lai. Hơn nữa, ta sẽ chỉ ra rằng trong số các bài toán có thể giải bằng
+máy tính, có những bài toán mà lời giải của nó quá phức tạp đến mức không giải được trên
+thực tế.
+
+\input{ch7/functions.tex}
+\input{ch7/Turing.tex}
+\input{ch7/universal.tex}
+\input{ch7/noncomputable.tex}
+\input{ch7/complexity.tex}
+\input{ch7/problems.tex}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

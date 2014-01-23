@@ -1,0 +1,59 @@
+\section{Khái niệm Trừu tượng}
+
+Bởi vì khái niệm trừu tượng được sử dụng rất nhiều trong khoa học máy
+tính và thiết kế hệ thống máy tính nên chúng ta cần phải hiểu khái
+niệm đó ngay từ trong chương mở đầu này. Thuật ngữ \textbf{trừu
+  tượng}~(abstraction) ở đây nhằm chỉ sự phân biệt giữa tính chất bên
+ngoài của một đối tượng và chi tiết hình thành bên trong của đối tượng
+đó. Chính nhờ trừu tượng nên chúng ta có thể bỏ qua chi tiết bên trong
+của các thiết bị phức tạp như máy tính, ô tô, hoặc lò vi-ba sóng; mà
+chỉ cần nắm bắt được các chức năng của nó để sử dụng.  Hơn nữa, chính
+nhờ công cụ trừu tượng nên người ta mới xây dựng được những hệ thống
+phức tạp.  Máy tính, ôtô, và các lò vi-ba sóng được tạo nên từ các
+thành phần, mỗi thành phần lại được xây dựng từ các thành phần nhỏ
+hơn. Mỗi thành phần biểu diễn một mức trừu tượng. Ở mỗi mức trừu tượng
+ta sử dụng lại các thành phần mức thấp hơn mà không phải quan tâm chi
+tiết xem chúng hình thành thế nào.
+
+Nhờ có công cụ trừu tượng, chúng ta có thể xây dựng, phân tích, và
+quản lý các hệ thống máy tính lớn, phức tạp. Các hệ thống này rất phức
+tạp nếu nhìn các đối tượng của chúng ở mức chi tiết.  Theo từng mức
+trừu tượng, chúng ta nhìn hệ thống theo quan hệ thành phần, được gọi
+là \textbf{công cụ trừu tượng} (abstraction tool), trong đó cách cấu
+thành bên trong bị bỏ qua. Điều này cho phép chúng ta tập trung xem
+xét xem các thành phần (ở cùng mức) tương tác với nhau như thế nào và
+làm thế nào để tập hợp chúng lại thành một thành phần ở mức cao
+hơn. Bởi vậy, chúng ta có thể hiểu từng phần của hệ thống.
+
+Cần nhấn mạnh rằng việc trừu tượng không chỉ giới hạn trong phạm vi
+khoa học và công nghệ. Nó là kỹ thuật đơn giản hoá quan trọng tạo ra
+lối sống của xã hội chúng ta. Rất ít người trong số chúng ta hiểu sự
+tiện lợi trong cuộc hàng ngày của chúng ta được thực hiện như thế
+nào. Chúng ta ăn và mặc những thứ mà bản thân chúng ta không thể làm
+ra được. Chúng ta sử dụng các thiết bị điện mà không cần phải hiểu về
+công nghệ tạo ra nó. Chúng ta sử dụng các dịch vụ của những người khác
+mà không cần biết một cách chi tiết về nghề của họ. Từng bước, người
+ta cố gắng chuyên biệt cách thực hiện một số thứ trong xã hội, còn
+những người khác chỉ cần cố gắng tìm hiểu để sử dụng các kết quả đó
+như là công cụ trừu tượng. Theo cách này, kho các công cụ trừu tượng
+của xã hội được mở rộng, và khả năng của xã hội không ngừng tiến xa
+hơn.
+
+Chúng ta còn gặp lại chủ đề trừu tượng nhiều lần trong nghiên cứu của
+chúng ta. Chúng ta sẽ thấy rằng các thiết bị máy tính được xây dựng ở
+mức của các công cụ trừu tượng. Chúng ta cũng sẽ thấy rằng sự phát
+triển của các hệ thống phần mềm lớn là theo cách mô đun hoá trong đó
+mỗi mô đun được sử dụng như là một công cụ trừu tượng trong mô đun lớn
+hơn. Hơn nữa, trừu tượng đóng vai trò quan trọng trong nhiệm vụ phát
+triển ngành khoa học máy tính, cho phép các các nhà nghiên cứu hướng
+sự chú ý tới các lĩnh vực đặc biệt bên trong một lĩnh vực phức
+tạp. Trên thực tế, cách tổ chức của tài liệu này phản ánh đặc trưng
+của khoa học. Mỗi chương trọng tâm vào một lĩnh vực đặc biệt trong
+khoa học, chương này độc lập với chương khác, nhưng khi ghép lại cùng
+nhau nó trở thành một tài liệu tổng quan dễ hiểu về các lĩnh vực rộng
+được nghiên cứu.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

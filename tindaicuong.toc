@@ -1,0 +1,47 @@
+\select@language {vietnamese}
+\contentsline {chapter}{\numberline {1}Giới thiệu chung}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}Vai trò của thuật toán}{5}{section.1.1}
+\contentsline {section}{\numberline {1.2}Lịch sử máy tính}{7}{section.1.2}
+\contentsline {section}{\numberline {1.3}Khoa học thuật toán}{11}{section.1.3}
+\contentsline {section}{\numberline {1.4}Khái niệm trừu tượng}{13}{section.1.4}
+\contentsline {chapter}{\numberline {2}Lưu trữ dữ liệu}{15}{chapter.2}
+\contentsline {section}{\numberline {2.1}Các bít và cách lưu trữ}{15}{section.2.1}
+\contentsline {section}{\numberline {2.2}Bộ nhớ chính}{21}{section.2.2}
+\contentsline {section}{\numberline {2.3}Thiết bị lưu trữ khối}{25}{section.2.3}
+\contentsline {section}{\numberline {2.4}Biểu diễn thông tin}{33}{section.2.4}
+\contentsline {section}{\numberline {2.5}Bài tập cuối chương}{40}{section.2.5}
+\contentsline {chapter}{\numberline {3}Thao tác dữ liệu}{45}{chapter.3}
+\contentsline {section}{\numberline {3.1}Kiến trúc máy tính}{45}{section.3.1}
+\contentsline {section}{\numberline {3.2}Ngôn ngữ máy}{48}{section.3.2}
+\contentsline {paragraph}{Chuyển dữ liệu}{49}{paragraph*.19}
+\contentsline {paragraph}{Số học và logic}{50}{paragraph*.20}
+\contentsline {paragraph}{Điều khiển}{50}{paragraph*.21}
+\contentsline {section}{\numberline {3.3}Thực hiện chương trình}{56}{section.3.3}
+\contentsline {section}{\numberline {3.4}Các lệnh số học và logic}{65}{section.3.4}
+\contentsline {section}{\numberline {3.5}Giao tiếp với các thiết bị khác}{71}{section.3.5}
+\contentsline {section}{\numberline {3.6}Các kiến trúc khác}{77}{section.3.6}
+\contentsline {section}{\numberline {3.7}Bài tập cuối chương}{80}{section.3.7}
+\contentsline {chapter}{\numberline {4}Hệ điều hành}{91}{chapter.4}
+\contentsline {section}{\numberline {4.1}Lịch sử các hệ điều hành}{92}{section.4.1}
+\contentsline {section}{\numberline {4.2}Kiến trúc hệ điều hành}{97}{section.4.2}
+\contentsline {section}{\numberline {4.3}Điều phối các hoạt động của máy}{105}{section.4.3}
+\contentsline {section}{\numberline {4.4}An ninh của máy tính}{109}{section.4.4}
+\contentsline {section}{\numberline {4.5}Bài tập cuối chương}{113}{section.4.5}
+\contentsline {chapter}{\numberline {5}Mạng và mạng Internet}{117}{chapter.5}
+\contentsline {section}{\numberline {5.1}Cơ bản về mạng}{117}{section.5.1}
+\contentsline {section}{\numberline {5.2}Mạng Internet}{130}{section.5.2}
+\contentsline {paragraph}{Thư điện tử (Electronic Mail)}{136}{paragraph*.50}
+\contentsline {paragraph}{Giao thức truyền tệp (File Transfer Protocol)}{136}{paragraph*.52}
+\contentsline {paragraph}{Telnet và Secure Shell}{139}{paragraph*.53}
+\contentsline {section}{\numberline {5.3}World Wide Web}{140}{section.5.3}
+\contentsline {section}{\numberline {5.4}Phần đọc thêm: Các giao thức Internet}{155}{section.5.4}
+\contentsline {section}{\numberline {5.5}An toàn và bảo mật}{164}{section.5.5}
+\contentsline {section}{\numberline {5.6}Bài tập cuối chương}{177}{section.5.6}
+\contentsline {chapter}{\numberline {6}Lý thuyết tính toán}{183}{chapter.6}
+\contentsline {section}{\numberline {6.1}Các hàm và tính toán}{184}{section.6.1}
+\contentsline {section}{\numberline {6.2}Các máy Turing}{186}{section.6.2}
+\contentsline {section}{\numberline {6.3}Các ngôn ngữ lập trình phổ dụng}{191}{section.6.3}
+\contentsline {section}{\numberline {6.4}Hàm không tính được}{199}{section.6.4}
+\contentsline {section}{\numberline {6.5}Độ phức tạp của bài toán}{208}{section.6.5}
+\contentsline {section}{\numberline {6.6}Bài tập cuối chương}{216}{section.6.6}
+\contentsline {chapter}{\numberline {A}Một ngôn ngữ máy đơn giản}{223}{appendix.A}

@@ -1,0 +1,91 @@
+\section{Bài tập cuối chương}
+\begin{multicols}{2}
+  \begin{enumerate}
+
+  \item Giao thức là gì? Chỉ ra 3 giao thức đã giới thiệu trong chương và mô tả mục đích của mỗi giao thức.
+
+  \item Xác định và mô tả một giao thức máy trạm/máy chủ được sử dụng trong cuộc sống hàng ngày.
+
+  \item Mô tả mô hình máy trạm/máy chủ.
+
+  \item Chỉ ra 2 cách thức phân loại mạng máy tính.
+
+  \item Sự khác nhau giữa hệ thống mạng mở và hệ thống mạng đóng?
+
+  \item Có những giao thức dựa trên thẻ bài có thể được sử dụng để điều khiển quyền truyền
+    phát tín hiệu mà không theo mô hình mạng vòng tròn. Thiết kế một giao thức dựa trên
+    thẻ bài nhằm điều khiển quyền truyền phát tín hiệu trong một mạng LAN với mô hình mạng
+    hình tuyến.
+
+  \item Mô tả các bước thực hiện bởi một máy tính muốn truyền một thông điệp trong hệ
+    thống mạng sử dụng giao thức CSMA/CD.
+
+  \item Hub khác biệt so với Repeater như thế nào?
+
+  \item Chỉ ra sự khác biệt khi so sánh Router với các thiết bị như Repeater, Bridge, Switch.
+
+  \item Phân biệt một mạng nói chung với một mạng Internet nói riêng
+
+  \item Chỉ ra 2 giao thức điều khiển việc truyền tải một thông điệp trong một hệ thống mạng.
+
+  \item 1.Mã hóa mỗi chuỗi bit sau đây bằng cách sử dụng ký hiệu dấu chấm thập phân:
+    \begin{enumerate}
+    \item $000000010000001000000011$
+
+    \item $1000000000000000$
+
+    \item $0001100000001100$
+    \end{enumerate}
+
+  \item Chuỗi bit tương ứng với mỗi mẫu ký hiệu dấu thập phân sau:
+    \begin{enumerate}
+    \item $0.0$ 
+    \item $25.18.1$
+    \item $5.12.13.10$
+    \end{enumerate}
+
+  \item Giả sử địa chỉ của một máy chủ trên mạng Internet là $138.48.4.123$. Địa chỉ tương
+    ứng ở dạng hệ cơ số 8 (Hexa) là gì?
+
+  \item Nếu phần xác định địa chỉ mạng của một vùng là $192.207.77$, có bao nhiêu địa chỉ
+    IP có thể sử dụng được để cấu hình cho các máy tính trong vùng? (Sau khi bạn tìm ra
+    được câu trả lời, bạn có thể phỏng đoán rằng có thể có ít hơn địa chỉ IP so với số
+    lượng máy tính có trong vùng, và đây cũng là trường hợp thường xảy ra. Một giải pháp
+    để có thể đặt địa chỉ IP cho các máy tính chỉ khi máy cần dùng đến, đó là hệ thống đặt
+    địa chỉ IP động).
+
+
+  \item Nếu một địa chỉ theo dạng tên dễ nhớ của một máy tính trên mạng Internet có dạng:
+    batman.batcave.metropolis.gov. Bạn có thể phỏng đoán vùng chứa máy tính đó là gì?
+
+
+  \item Giải thích các thành phần xuất hiện trong địa chỉ \url{kermit@animals.com}
+
+  \item Trong trường hợp truyền tải tệp sử dụng giao thức FTP, sự khác biệt rõ nét giữa
+    ``tệp văn bản'' và ``tệp nhị phân'' là gì?
+
+  \item Vai trò của máy chủ thư trong một vùng là gì?
+
+  \item Định nghĩa lại mỗi khái niệm sau:
+    \begin{enumerate}
+    \item Name server
+    \item Domain
+    \item Router
+    \item Host
+    \end{enumerate}
+
+  \item Vai trò của Network Virtual Terminal trong giao thức telnet?
+
+  \item Định nghĩa lại mỗi khái niệm sau:
+    \begin{enumerate}
+    \item Hypertext
+    \item HTML
+    \item Browser
+    \end{enumerate}
+  \end{enumerate}
+\end{multicols}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

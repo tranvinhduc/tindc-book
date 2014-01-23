@@ -1,0 +1,33 @@
+\section{Bài tập cuối chương}
+  
+
+\begin{multicols}{2}
+  \begin{enumerate}
+  \item Liệt kê bốn hoạt động của một hệ điều hành điển hình.
+
+  \item Tóm tắt sự khác nhau giữa xử lý gói theo lô và xử lý tương
+    tác.
+
+  \item Ta đặt (theo thứ tự) ba phần tử $R, S$ và $T$ vào trong một
+    hàng đợi. Đầu tiên, ta lấy hai phần tử ra khỏi hàng đợi và đặt
+    thêm một phần tử $X$ vào hàng đợi. Sau đó, ta lại lấy tiếp hai
+    phần tử ra khỏi hàng đợi, và lại đặt thêm hai phần tử $Y, Z$ (theo
+    thứ tự) vào hàng đợi, và sau đó lấy hết các phần tử cho đến khi
+    hàng đợi rỗng. Hãy liệt kê các phần tử trong hàng đợi theo thứ tự
+    mà chúng bị lấy ra khỏi hàng đợi.
+
+  \item Chỉ ra sự khác biệt giữa xử lý tương tác và xử lý thời gian
+    thực.
+
+  \item Hệ điều hành đa nhiệm là gì?
+
+  \item Giả sử bạn có một máy PC, hãy chỉ ra một vài tình huống bạn
+    thấy rõ ưu điểm của khả năng đa nhiệm.
+  \end{enumerate}
+\end{multicols}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

@@ -1,0 +1,87 @@
+
+\chapter {Một ngôn ngữ máy đơn giản}
+\label{phuluc1}
+
+Trong Phụ lục này chúng ta giới thiệu một ngôn ngữ máy đơn giản nhưng trực quan. Chúng ta
+sẽ bắt đầu bằng cách giải thích kiến trúc của nó.
+
+\subsection*{Kiến trúc máy}
+Máy có $16$ thanh ghi đa năng đánh số từ $0$ đến $F$ (ở dạng hexa). Mỗi thanh ghi có độ
+dài là một byte (tám bít). Để xác định thanh ghi bên trong lệnh, mỗi thanh ghi được gán
+với một xâu bốn bít phân biệt. Bởi vậy, thanh ghi $0$ xác định bởi $0000$ (ở dạng hexa là
+$0$), thanh ghi $4$ xác định bởi $0100$ ($4$ ở dạng hexa).
+
+Bộ nhớ chính gồm $256$ ô nhớ. Mỗi ô nhớ được gán một địa chỉ duy nhất bao gồm một thanh
+ghi phạm vi từ $0$ tới $255$. Từ đó, một địa chỉ có thể biểu diễn bởi tám bít, phạm vi từ
+$00000000$ đến $11111111$ (ở dạng hexa là từ $00$ đến $FF$).
+
+Các giá trị dấu chấm động được lưu trữ ở dạng tám bít được thảo luận ở Phần \ref{} và được
+tóm tắt trong hình \ref{}.
+
+\subsection*{Ngôn ngữ máy}
+Mỗi lệnh máy có độ dài hai byte. Bốn bít đầu tiên là trường op-code; $12$ bít sau dành cho
+phần toán hạng. Bảng dưới đây liệt kê các lệnh (ở dạng hexa) với mô tả ngắn gọn các
+lệnh. Các chữ cái R, S và T được sử dụng ở dạng hexa biểu diễn các thanh ghi. Các chữ cái
+X và Y sử dụng cho các số hexa, trong các trường không phải để biểu diễn thanh ghi.
+
+\begin{longtable}{ccm{10cm}} 
+  \textbf{Op-code} & \textbf{Toán hạng} & \textbf{Mô tả} \\
+ 
+  $1$ & RXY & LOAD thanh ghi R với giá trị nằm trong ô nhớ tại
+  địa chỉ XY.                                      \\
+   & & \textit{Ví dụ:} $14A3$ đặt nội dung của thanh ghi $4$ bằng với nội dung của ô nhớ
+  tại
+  địa chỉ $A3$. \\\\
+   
+  $2$ & RXY & LOAD nạp thanh ghi R bằng với xâu bít XY. \\
+  & & \textit{Ví dụ:} $20A3$ đặt giá trị $A3$ vào thanh ghi $0$. \\ \\
+
+  $3$ & RXY & STORE ghi nội dung thanh ghi $R$ vào trong bộ nhớ tại địa chỉ XY. \\
+  & & \textit{Ví dụ:} $35B1$ ghi nội dung thanh ghi $5$ vào ô nhớ tại địa chỉ $B1$ \\ \\
+
+  $4$ & 0RS & MOVE sao chép xâu bít trong thanh ghi $R$ vào thanh ghi $S$.\\
+  & & \textit{Ví dụ:} $40A4$ sao chép nội dung thanh ghi  $A$ vào thanh ghi $4$ \\ \\
+
+  $5$ & RST & ADD cộng nội dung trong thanh ghi S và T ở dạng bù hai và đặt kết quả vào
+  thanh ghi R. \\
+  & & \textit{Ví dụ:} $5726$ cộng giá trị trong thanh ghi $2$ với giá trị trong thanh ghi
+  $6$ và kết quả đặt vào thanh ghi $7$. \\ \\
+
+  $7$ & RST & ADD cộng nội dung trong thanh ghi S và T ở dạng dấu chấm động và đặt kết quả vào
+  thanh ghi R. \\
+  & & \textit{Ví dụ:} $634E$ cộng giá trị trong thanh ghi $4$ với giá trị trong thanh ghi
+  $E$ dạng dấu chấm động và kết quả đặt vào thanh ghi $3$. \\ \\
+
+  $8$ & RST & OR các xâu bít trong thanh ghi S và T và đặt kết quả vào
+  thanh ghi R. \\
+  & & \textit{Ví dụ:} $7CB4$ OR giá trị trong thanh ghi $B$ với giá trị trong thanh ghi
+  $4$ dạng dấu chấm động và kết quả đặt vào thanh ghi $C$. \\ \\
+
+  $9$ & RST & XOR tuyển loại các xâu bít trong thanh ghi S và T và đặt kết quả vào
+  thanh ghi R. \\
+  & & \textit{Ví dụ:} $95F3$ XOR giá trị trong thanh ghi $F$ với giá trị trong thanh ghi
+  $3$ dạng dấu chấm động và kết quả đặt vào thanh ghi $5$. \\ \\
+
+  $A$ & R0X & ROTATE quay phải một bít xâu bít trong thanh ghi R đi X lần. Mỗi lần đặt
+  bít thấp nhất lại vào vị trí cao nhất.\\
+  & & \textit{Ví dụ:} $A403$  quay nội dung thanh ghi $4$ đi sang phải $3$ bít theo cách
+  vòng. \\ \\
+
+  $B$ & RXY & JUMP nhảy tới vị trí lệnh tại vị trí XY trong bộ nhớ nếu nội dung của thanh
+  ghi R bằng với nội dung thanh ghi $0$. Ngược lại, tiếp tục với việc thực hiện như bình
+  thường. (Lệnh nhảy được cài đặt bằng cách sao chép XY vào bộ đếm chương trình trong
+  bước thực hiện.) \\
+  & & \textit{Ví dụ:} $B43C$ đầu tiên nó so sánh nội dung của thanh ghi $4$ với nội dung
+  của thanh ghi $0$. Nếu bằng nhau, xâu bít $3C$ được đặt trong bộ đếm chương trình sao
+  cho lệnh tại địa chỉ này sẽ là lệnh tiếp theo được thực hiện. Ngược lại, nó không làm gì
+  và chương trình tiếp tục thực hiện theo thứ tự bình thường. \\ \\
+
+  $C$ & $000$ & HALT dừng việc thực hiện chương trình.\\
+  & & \textit{Ví dụ:} $C000$  làm dừng chương trình đang thực hiện. \\ \\
+\end{longtable}
+    
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

@@ -1,0 +1,128 @@
+
+\section{An ninh của máy tính}
+
+Bởi vì các hệ điều hành giám sát các hoạt động của máy tính, nên nó cũng đóng vai trò
+chính trong việc đảm bảo an ninh. Theo nghĩa rộng, nó có thể ở nhiều dạng, một trong số
+chúng là độ tin cậy. Nếu sai sót trong trình quản lý file gây ra mất dữ liệu của file, vậy
+file không an toàn. Nếu chương trình điều phối gây ra đổ vỡ hệ thống, làm mất dữ liệu ta
+mất cả giờ để đánh, vậy công việc của ta không an toàn. Bởi vậy, an ninh của một hệ
+thống tính toán đòi hỏi hệ điều hành phải được thiết kế tốt và đáng tin cậy.
+
+Việc phát triển các phần mềm đáng tin cậy không phải là vấn đề nghiên cứu của hệ điều
+hành. Nó thuộc phạm vi của Công nghệ phần mềm, ta sẽ xem xét sau trong
+Chương~\ref{}. Trong phần này, ta chỉ quan tâm đế các vấn đề an ninh liên quan riêng đến
+hệ điều hành.
+
+\subsection*{Tấn công từ bên ngoài}
+Một trong những nhiệm vụ quan trọng của hệ điều hành là bảo vệ tài nguyên của máy tính
+tránh khỏi các truy cập bất hợp lệ. Trong trường hợp hệ thống có nhiều người sử dụng, việc
+bảo vệ này dựa trên ``tài khoản'' (account)--một tài khoản được quản lý trong trong hệ
+điều hành như một mục gồm tên người dùng, mật khẩu và quyền truy cập gắn với người
+dùng. Hệ điều hành dùng các thông tin này trong mỗi lần đăng nhập (login) để điều khiển
+việc truy cập vào hệ thống.
+
+Các tài khoản được tạo bởi một người gọi là \textbf{super user} hay \textbf{người quản
+  trị} (administrator). Người này có quyền cao nhất trong hệ thống, và cũng phải đăng nhập
+vào hệ thống để xác thực anh/chị ta là người quản trị (thường bởi tên và mật khẩu). Khi đã
+đăng nhập, người quản trị có thể làm nhiều thay đổi bên trong hệ thống như: thay đổi gói
+phần mềm, gán quyền cho người dùng, thực hiện các hoạt động bảo trì hệ thống,...
+
+Dùng ``quyền rất cao'' này, người quản trị phải điều khiển hoạt động trong hệ thống để
+kiểm tra các hành vi phá hoại hệ thống, do vô tình hay cố ý. Cũng có nhiều phần mềm công
+cụ trợ giúp người quản trị, được gọi là \textbf{phần mềm kiểm tra} (auditing software). Nó
+ghi lại và phân tích các hoạt động xảy ra bên trong hệ thống. Ví dụ, phần mềm kiểm tra có
+thể cho biết những lần đăng nhập sai mật khẩu. Phần mềm kiểm tra cũng phát hiện các hoạt
+động của một tài khoản người dùng không phù hợp với các hành vi của anh ta trong quá khứ,
+để từ đó chỉ ra những người dùng không có thẩm quyền đã giành được quyền truy cập vào tài
+khoản này. (ví dụ, với một người dùng bình thường chỉ dùng gói phần mềm xử lý văn bản và
+bảng tính, bây giờ lại dùng các ứng dụng phần mềm kỹ thuật cao hoặc thực hiện các gói công
+cụ không hợp lệ với quyền của anh ta.)
+
+Phần mềm kiểm tra cũng được thiết kế để phát hiện các \textbf{phần mềm sniffing}, là phần
+mềm khi được phép chạy trên hệ thống sẽ tìm cách ghi lại các hoạt động và sau đó thông báo
+lại cho kẻ thâm nhập (intruder). Một ví dụ tuy cũ nhưng được biết rộng rãi là một chương
+trình một phỏng thủ tục đăng nhập của hệ điều hành. Các chương trình như thế này có thể
+làm cho người dùng khác nhầm tưởng họ đang giao tiếp với hệ điều hành, và cung cấp tên và
+mật khẩu cho kẻ mạo danh.
+
+Với mọi sự phức tạp về mặt kỹ thuật được gắn với máy tính, thật đáng ngạc nhiên là rào cản
+chính của an ninh của máy tính là do sự thiếu thận trọng của người dùng. Họ chọn các mật
+khẩu rất dễ đoán (như tên và ngày sinh), họ chia sẻ mật khẩu của họ với bạn bè, họ không
+thay đổi mật khẩu thường xuyên, họ đưa các thiết bị lưu trữ khối off-line của mình đến chỗ
+hỏng hóc khi họ chuyển các thiết bị này giữa các máy, họ cài đặt các phần mềm có thể gây
+mất an toàn vào hệ thống. Để giải quyết những vấn đề này, hầu hết các hệ thống máy tính
+lớn đều bắt ép người dùng tuân theo một số yêu cầu về an toàn để nâng cao ý thức trách
+nhiệm của họ.
+
+\subsection*{Tấn công từ bên trong}
+Khi một kẻ thâm nhập (có thể là người dùng hợp lệ nhưng có ý đồ xấu) tấn công vào hệ
+thống, chúng thường tìm cách thăm dò, tìm các thông tin quan tâm, hoặc cài đặt vào hệ
+thống các phần mềm phá hoại. Điều này rất đơn giản nếu kẻ rình mò có thể truy cập hệ thống
+bằng tài khoản của người quản trị. Đây chính là lý do tại sao mà mật khẩu của người quản
+trị phải được bảo vệ một cách nghiêm ngặt. Tuy nhiên, nếu truy cập được vào tài khoản
+người dùng thông thường, kẻ thâm nhập phải tìm cách làm đánh lừa hệ điều hành để truy cập
+vào các vùng bị cấm. Ví dụ, kẻ truy cập có thể đánh lừa trình quản lý bộ nhớ cho phép một
+tiến trình truy cập ra ngoài vùng nhớ dành cho nó, hoặc kẻ truy cập có thể cố gắng đánh
+lừa trình quản lý file để lấy các file mà nó không có quyền truy cập.
+
+
+Các CPU hiện đại được thiết kế có thêm các đặc tính nhằm ngăn chặn những vấn đề này. Ví
+dụ, có thể xét nhu cầu hạn chế một tiến trình chỉ được truy cập vào vùng bộ nhớ mà trình
+quản lý bộ nhớ gán cho nó; nếu không hạn chế, một tiến trình có thể xoá hệ điều hành trong
+bộ nhớ chính và chiếm quyền điều khiển máy tính. Để ngăn chặn vấn đề này, các CPU được
+thiết kế cho hệ điều hành đa nhiệm có thể chứa các thanh ghi đặc biệt cho phép hệ điều
+hành lưu giữ các giới hạn trên và dưới của vùng nhớ được gán cho tiến trình. Và trong khi
+thực hiện xử lý, CPU so sánh mỗi vùng nhớ được tham chiếu đến với các thanh ghi này để đảm
+bảo nó nằm trong giới hạn cho phép. Nếu vùng nhớ tham chiếu đến vượt ra ngoài giới hạn
+này, CPU tự động chuyển quyền điều khiển tới hệ điều hành (bằng cách thực hiện một dãy các
+ngắt) để hệ điều hành có các xử lý phù hợp.
+
+Dù đặc điểm ta mô tả ở trên có vẻ rất tinh tế, nhưng trên thực tế nó vẫn có vấn đề. Nếu
+CPU không có thêm một vài đặc tính an toàn nữa, một tiến trình vẫn có thể truy cập vào các
+ô nhớ bất hợp lệ bằng cách thay đổi thanh ghi đặc biệt (chứa giới hạn bộ nhớ). Có nghĩa
+rằng, một tiến trình có thể truy cập một bộ nhớ bên ngoài đơn thuần bằng cách thay đổi các
+giá trị trong thanh ghi chứa giới hạn trên và dưới của bộ nhớ, và do đó nó có thể sử dụng
+không gian bộ nhớ thêm mà không cần hệ điều hành cho phép.
+
+Để tránh các hoạt động kiểu này, CPU được thiết kế để có thể thực hiện trong một hoặc hai
+\textbf{mức đặc quyền} (privilege level); ta sẽ gọi là ``mode đặc quyền'' và ``mode
+không đặc quyền.'' Khi ở trong mode đặc quyền, CPU có thể thực hiện mọi lệnh có trong ngôn
+ngữ máy của nó. Tuy nhiên, khi ở trong mode không đặc quyền, các lệnh mà nó có thể thực
+hiện sẽ bị giới hạn. Các lệnh chỉ được phép chạy ở mode đặc quyền gọi là \textbf{lệnh đặc
+  quyền}. (ví dụ lệnh đặc quyền điển hình là lệnh làm thay đổi nội dung các thanh ghi giới
+hạn bộ nhớ và các lệnh làm thay đổi mode đặc quyền của CPU.) Mọi nỗ lực thực hiện một lệnh
+đặc quyền khi CPU ở mode không đặc quyền đều gây ra một ngắt. Ngắt này chuyển CPU tới mode
+đặc quyền và chuyển quyền điều khiển tới trình xử lý ngắt của hệ điều hành.
+
+Khi máy được bật, CPU ở mode đặc quyền. Bởi vậy, khi kết thúc quá trình khởi động và hệ
+điều hành chiếm quyền điều khiển, lúc này mọi lệnh máy đều có thể được hiện. Tuy nhiên,
+mỗi khi hệ điều hành cho phép một tiến trình chạy một time slide, nó chuyển CPU tới mode
+không đặc quyền bằng cách thực hiện một lệnh ``chuyển mode đặc quyền''. Và từ lúc này, hệ
+điều hành sẽ được thông báo nếu tiến trình cố gắng thực hiện lệnh ở mode đặc quyền.
+
+Các lệnh đặc quyền và điều khiển các mức đặc quyền là các công cụ chính sẵn có để các hệ
+điều hành quản lý an ninh. Tuy nhiên, việc sử dụng các công cụ này là một công việc hết
+sức phức tạp trong thiết kế hệ điều hành. Một lỗi nhỏ trong điều khiển mức đặc quyền có
+thể gây ra thảm hoạ do những người lập trình có ý đồ xấu hoặc do các lỗi vô ý gây ra khi
+lập trình. Nếu một tiến trình được phép thay đổi thay đổi bộ định thời gian điều khiển
+việc chia sẻ thời gian thực của hệ thống có thể cho phép một tiến trình mở rộng time slide
+và chiếm quyền điều khiển máy. Nếu một tiến trình được phép truy cập trực tiếp vào thiết
+bị ngoại vi, vậy nó có thể đọc các file mà không bị giám sát bởi trình quản lý file. Nếu
+một tiến trình được phép truy cập vào các ô nhớ bên ngoài vùng cho phép, nó có thể đọc và
+thậm chí thay đổi dữ liệu đang được sử dụng bởi tiến trình khác.
+  
+\subsection*{Câu hỏi \& Bài tập}
+\begin{enumerate}
+\item Hãy cho vài ví dụ về việc chọn mật khẩu kém an toàn và giải thích tại sao chúng lại
+  kém?
+
+\item Các bộ xử lý của Intel sử dụng bốn mức đặc quyền. Tại sao người thiết kế lại quyết
+  định dùng bốn mà không phải là ba hay năm mức?
+
+\item Nếu một tiến trình trong hệ thống chia sẻ thời gian thực có thể truy cập vào vùng
+  nhớ không được phép, làm thế nào nó có thể chiếm quyền điều khiển máy?
+\end{enumerate}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

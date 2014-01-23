@@ -1,0 +1,197 @@
+\chapter{Lưu trữ dữ liệu}
+\label{chap:chuong1}
+
+Trong chương này chúng ta sẽ xem xét cách mà dữ liệu được biểu diễn và lưu trữ trong máy
+tính.  Cụ thể, chúng ta sẽ xem xét cách biểu diễn của các văn bản, giá trị số, âm thanh,
+hình ảnh và video.
+
+\section{Các bít và cách lưu trữ}
+
+Máy tính thực chất là một máy điện, nó hoạt động dựa theo nguyên tắc lựa chọn tắt hoặc mở hàng triệu chuyển mạch rất nhỏ bên trong nó. Các trạng thái tắt hoặc bật này được mã hoá dưới dạng các số 0 hoặc 1. Các số này được gọi là các bít (gọi  tắt của số nhị phân).
+
+
+Vậy thông tin trong máy tính được biểu diễn dưới dạng dưới dạng dãy bít 0 hoặc 1.  Và dù rằng chúng ta nhìn các bít như một giá trị số, thì chúng thực sự vẫn chỉ là ký hiệu hình thức, ý nghĩa của nó tuỳ thuộc từng cách áp dụng. Đôi khi, dãy bít được dùng để biển diễn giá trị số; một lúc nào đó chúng lại biểu diễn như là ký tự trên một bảng chữ nào đó; lúc này  chúng lại biểu diễn hình ảnh; lúc khác lại biểu diễn như âm thanh.
+
+\subsection*{Phép toán Boolean}
+
+Nếu chúng ta nhìn bít 0 biểu diễn một giá trị logic \textit{false} và bít 1 biểu diễn cho giá trị \textit{true} thì các thao tác bên trong máy tính có thể được mô tả một cách hình thức bởi các \textbf{phép toán Boolean}, theo tên của  George Boole (1815-1864), một  nhà đi tiên phong trong Logic toán. Trong bảng \ref{fig:op-bool1} là ví dụ về ba trong nhiều phép toán boolean, phép toán AND, OR, XOR. Các phép toán này về mặt hình thức tương tự như các phép toán hai ngôi Nhân ($*$),  Cộng ($+$) và Trừ ($-$) trong số học, cũng nhận hai tham số đầu vào và trả ra kết quả. Ví dụ, phép toán AND với đầu vào là cặp giá trị false ($0$) và true ($1$) sẽ cho kết quả là false ($0$); cụ thể ta có:
+\[
+  0 \AND 1 = 0
+\] 
+
+ Khác ba phép toán kia, phép toán $\NOT$ là phép toán một ngôi, nó chỉ có một đầu vào và một đầu ra. Trong đó, đầu ra là giá trị đảo của đầu vào:
+\[
+\NOT  0 = 1 \mbox{ và } \NOT 1 = 0
+\]
+
+\begin{figure}[t]
+\centering
+  \label{fig:op-bool1}
+  \begin{minipage}{1.5in}
+    \begin{tabular}{cc|c}
+      $p$ & $q$ & $p \AND q$ \\
+      \hline
+      0 & 0 & 0 \\
+      0 & 1 & 0 \\
+      1 & 0 & 0 \\
+      1 & 1 & 1
+    \end{tabular}
+  \end{minipage}
+  \begin{minipage}{1.5in}
+    \begin{tabular}{cc|c}
+      $p$ & $q$ & $p \OR q$ \\
+      \hline
+      0 & 0 & 0 \\
+      0 & 1 & 1 \\
+      1 & 0 & 1 \\
+      1 & 1 & 1
+    \end{tabular}
+  \end{minipage}
+  \begin{minipage}{1.5in}
+    \begin{tabular}{cc|c}
+      $p$ & $q$ & $p \XOR q$ \\
+      \hline
+      0 & 0 & 0 \\
+      0 & 1 & 1 \\
+      1 & 0 & 1 \\
+      1 & 1 & 0
+    \end{tabular}
+  \end{minipage}
+ \caption{Các phép toán AND, OR, XOR (tuyển loại). Hai cột đầu tiên thể hiện  hai tham số đầu vào, cột thứ ba chỉ ra kết quả của phép toán tương ứng với tham số đó.}
+\end{figure} 
+
+\subsection*{Các cổng logic và Flip-flop} 
+
+%Các kết quả của đại số Boolean rất quan trọng trong thiết kế các thành phần của máy tính. Ý tưởng cơ bản là xây dựng các mạch đơn giản thực hiện một vài phép toán Boolean, còn các mạch phức tạp hơn có thể xây dựng lại được bằng cách kết hợp các mạch đơn giản đó.
+
+\textbf{Cổng} là một thiết bị điện tử có một hoặc nhiều đầu vào, mỗi đầu vào nhận giá trị $0$ hoặc $1$, tương ứng với hai mức điện thế; và thường có một đầu ra, đó là một hàm theo đầu vào, nó cũng nhận giá trị $0$ hoặc $1$.  Trong giáo trình này, chúng ta sẽ chỉ xem xét một cách hình thức các cổng như các ký hiệu, bỏ qua cách biểu diễn vật lý của chúng.
+
+Một cổng thường để tính toán một hàm Boolean cụ thể, đơn giản nào đó. Trong nghành công nghiệp điện tử, người ta thường chỉ xây dựng một số cổng thực hiện một vài hàm nhất định, còn các hàm khác sẽ được xây dựng lại bằng cách tổ hợp một số cổng cơ bản đó.  Hình \ref{fig:op-bool1} liệt kê một số cổng quen thuộc \ref{fig:op-bool1}.
+
+ 
+\begin{figure}[tbh]
+\centering
+  \label{fig:op-bool1}
+
+\subfloat[Cổng logic $\AND$]{
+  \begin{minipage}{3in}
+    \scalebox{0.5}{\includegraphics{ch2/fig2and.pdf}}
+  \end{minipage}
+\begin{minipage}{1.5in}
+    \begin{tabular}{cc|c}
+      \multicolumn{2}{c|}{Đầu vào} &  Đầu ra \\
+      \hline
+      0 & 0 & 0 \\
+      0 & 1 & 0 \\
+      1 & 0 & 0 \\
+      1 & 1 & 1
+    \end{tabular}
+\end{minipage}
+}
+
+\subfloat[Cổng logic $\OR$]{
+  \begin{minipage}{3in}
+    \scalebox{0.5}{\includegraphics{ch2/fig2or.pdf}}
+  \end{minipage}
+\begin{minipage}{1.5in}
+    \begin{tabular}{cc|c}
+      \multicolumn{2}{c|}{Đầu vào} &  Đầu ra \\
+      \hline
+      0 & 0 & 0 \\
+      0 & 1 & 1 \\
+      1 & 0 & 1 \\
+      1 & 1 & 1
+    \end{tabular}
+\end{minipage}
+}
+
+\subfloat[Cổng logic $\XOR$]{
+  \begin{minipage}{3in}
+    \scalebox{0.5}{\includegraphics{ch2/fig2xor.pdf}}
+  \end{minipage}
+\begin{minipage}{1.5in}
+    \begin{tabular}{cc|c}
+      \multicolumn{2}{c|}{Đầu vào} &  Đầu ra \\
+      \hline
+      0 & 0 & 0 \\
+      0 & 1 & 1 \\
+      1 & 0 & 1 \\
+      1 & 1 & 0
+    \end{tabular}
+\end{minipage}
+}
+
+\subfloat[Cổng logic $\NOT$]{
+  \begin{minipage}{3in}
+    \scalebox{0.5}{\includegraphics{ch2/fig2not.pdf}}
+  \end{minipage}
+\begin{minipage}{1.5in}
+    \begin{tabular}{c|c}
+      Đầu vào &  Đầu ra \\
+      \hline
+      0 & 0 \\
+      1  & 0 
+    \end{tabular}
+\end{minipage}
+}
+
+\caption{Các cổng logic}
+\end{figure}
+
+Các cổng được tổ hợp thành các \textbf{mạch số} (gọi tắt là mạch) bằng cách nối đầu ra của một số cổng với đầu vào một số cổng khác. Mỗi mạch có thể có một hoặc nhiều đầu vào, mỗi đầu vào này lại có thể là đầu vào của nhiều cổng khác bên trong mạch. Đầu ra của một hoặc nhiều cổng được gán làm đầu ra cho mạch.
+
+Một mạch quan trọng được chỉ ra trong hình \ref{fig:op-flipflop}, nó được gọi là mạch Flip-Flop. Một Flip-Flop là một mạch với giá trị đầu ra luôn giữ một giá trị là hằng số ($0$ hoặc~$1$) cho tới khi nhận được tín hiệu từ đầu vào yêu cầu chuyển sang một giá trị khác. Cũng chú ý rằng, khác với các phép toán Boolean trước, giá trị đầu ra của mạch không chỉ phụ thuộc đầu vào mà nó còn phụ thuộc cả vào đầu ra của thời điểm trước nữa.
+
+ Ta khẳng định rằng: khi cả hai giá trị đầu vào của mạch trong hình \ref{fig:op-flipflop} đều là $0$ thì đầu ra của mạch không thay đổi (dù nó có là $0$ hay $1$). Tuy nhiên, khi ta đặt giá trị $1$ cho đầu vào phía trên của mạch, ngay lập tức đầu ra sẽ là $1$. Còn khi ta đặt giá trị $1$ cho đầu vào phí dưới, ngay lập tức đầu ra của mạch sẽ là $0$.
+
+\begin{figure}[htb]
+\centering
+    \scalebox{0.4}{\includegraphics{ch2/fig-fflp.pdf}}
+\caption{Một mạch flip-flop}
+  \label{fig:op-flipflop}
+\end{figure}
+
+Chúng ta sẽ cùng phân tích khẳng định trên một cách chi tiết. Không cần biết đầu ra của mạch \ref{fig:op-flipflop} là bao nhiêu, giả sử rằng đầu vào phía trên của mạch đặt bằng $1$ và phía dưới đặt bằng $0$, vậy đầu ra của cổng $\OR$ sẽ là $1$, dù đầu vào kia của nó bây giờ là bao nhiêu đi nữa. Bây giờ, cả hai đầu vào của cổng $\AND$ đều bằng $1$, vậy đầu ra của nó bằng $1$, có nghĩa rằng đầu vào thứ hai của $\OR$ sẽ là $1$ (hình \ref{op-flipflop2b}). Điều này làm cho đầu ra của $\OR$ vẫn bằng $1$, kể cả khi bây giờ đầu vào phía trên của mạch được đặt bằng $0$ (hình \ref{op-flipflop2c}).  Tóm lại, đầu ra của Flip-flop đã trở thành $1$ và luôn giữ ở giá trị đó dù đầu vào phía trên được đặt bằng $0$ hay không.
+
+\begin{figure}[hbt]
+\centering
+  \label{fig:op-flipflop2}
+\subfloat[Đặt $1$ và $0$ vào 2 đầu vào]{
+    \scalebox{0.4}{\includegraphics{ch2/figffl1.pdf}}
+\label{op-flipflop2a}
+}\qquad \qquad
+\subfloat[Đầu ra của cổng $\OR$ và  cổng $\AND$ đều là $1$]{
+    \scalebox{0.4}{\includegraphics{ch2/figffl2.pdf}}
+\label{op-flipflop2b}
+}
+
+\subfloat[Giá trị $1$ từ cổng $\AND$ giữ cho đầu ra của $\OR$ bằng $1$ dù đầu vào kia bằng $0$]{
+    \scalebox{0.4}{\includegraphics{ch2/figffl3.pdf}}
+\label{op-flipflop2c}
+}
+\caption{Đưa giá trị đầu ra của Flip-flop lên 1}
+\end{figure}
+
+Cũng tương tự như trên, khi đặt giá trị $1$ cho đầu vào phía dưới sẽ làm cho đầu ra của flip-flop là $0$ và giá trị này vẫn giữ nguyên khi giá trị đầu vào được đưa trở về~$0$.
+   
+Chúng tôi giới thiệu mạch flip-flop trong hình \ref{fig:op-flipflop} và \ref{fig:op-flipflop2} nhằm hai mục đích. Thứ nhất, nó chỉ ra làm thế nào các thiết bị có thể được xây dựng từ các cổng , quá trình này được gọi là thiết kế mạch số, nó đóng vai trò quan trọng trong nghành công nghệ máy tính. Thứ hai, nó cho ta cách để lưu trữ một bít trong máy tính. Thật vậy, mạch flip-flop cho phép ta đặt giá trị để đầu ra của nó luôn bằng $0$ hoặc bằng $1$. Vậy các mạch khác muốn lưu trữ có thể gửi tín hiệu tới đầu vào của flip-flop để đặt giá trị, và các mạch khác nữa có thể sử dụng giá trị lưu trữ bằng cách lấy giá trị từ đầu ra của flip-flop như đầu vào của nó. Với kỹ thuật hiện nay, rất nhiều flip-flop có thể được kết hợp lại trong một con chip và sử dụng để sử dụng để lưu trữ thông tin dưới dạng mã hoá như dãy bít $0$ và $1$.
+
+\subsection*{Bài tập}
+\begin{enumerate}
+ \item Với những giá trị đầu vào nào thì mạch sau đây cho đầu ra là $1$?
+
+ \item Phần trình bày ở trên khẳng định rằng việc đặt $1$ cho đầu vào phía dưới của    flip-flop trong hình \ref{fig:op-flipflop} (trong khi vẫn giữ đầu vào phía trên bằng    $0$) sẽ làm cho đầu ra của flip-flop bằng $0$. Hãy mô tả dãy các sự kiện xuất hiện    trong flip-flop trong trường hợp này?
+
+\item Phối hợp các hoạt động của các thành phần khác nhau bên trong máy tính là rất cần   thiết. Điều này được làm bằng cách nối với một xung đồng hồ với các mạch cần phối hợp.   Bởi vì đồng hồ thay đổi luân phiên giữa giá trị $0$ và $1$, nó làm cho các thành phần   mạch hoạt động. Dưới đây là một ví dụ một phần của mạch liên quan đến flip-flop trong   hình \ref{fig:op-flipflop}. Giá trị nào của xung đồng hồ sẽ chặn các giá trị đầu vào của   mạch tác động đến flip-flop? Giá trị nào của xung đồng hồ sẽ làm cho flip-flop phản ứng   lại với giá trị đầu vào của mạch?
+
+   
+
+   
+\end{enumerate}
+   
+\section{Bộ nhớ chính}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 
+ 

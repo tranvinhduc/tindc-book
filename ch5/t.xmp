@@ -1,0 +1,11 @@
+<staff clef = "treble">
+  <key>C minor</key>
+  <time> 2/4 </time>
+  <measure> 
+    <rest> egth </rest> 
+    <notes> egth G, egth G, egth G </notes>
+  </measure>
+  <measure> 
+    <notes> hlf E </notes>
+  </measure>
+</staff>

@@ -1,0 +1,35 @@
+
+\chapter{Hệ Điều Hành}
+\label{chap:4}
+
+Trong chương này, chúng ta sẽ xem xét về Hệ Điều Hành, là tập các gói
+phần mềm để điều phối các hoạt động bên trong của máy cũng như để giao
+tiếp với thế giới bên ngoài. Cũng chính điều hành của máy đã chuyển
+đổi phần cứng thành các công cụ có ích. Chúng ta sẽ cùng tìm hiểu
+xem hệ điều hành làm những gì và làm như thế nào.
+
+\minitoc
+\noindent
+Hệ điều hành là phần mềm điều khiển toàn bộ thao tác của máy tính. Nó
+cung cấp cách để người sử dụng lưu trữ và tìm kiếm các tập tin, giao
+diện để người sử dụng yêu cầu thực hiện chương trình, và môi trường
+cần thiết để thực hiện các chương trình được yêu cầu.
+
+
+Hệ điều hành được nhiều người biết đến nhất có lẽ là Windows, nó có
+nhiều phiên bản khác nhau và được viết bởi hãng Microsoft. Một ví dụ
+khác là UNIX, thường được dùng cho các hệ thống máy tính lớn cũng như
+cho các máy PC. Trên thực tế, Mac OS, hệ điều hành của Apple chuyên
+cho dòng máy Mac, được viết dựa trên nhân của UNIX. Một ví dụ khác nữa
+là GNU/Linux, dùng cho cả hệ thống lớn và nhỏ, nó gốc được phát triển
+bởi cộng đồng những người say mê và không vì mục đích thương mại.
+Hiện nay nó cũng được hỗ trợ bởi các công ty lớn như IBM.
+ 
+\input{ch4/history.tex}
+\input{ch4/kientrucHDH.tex}
+\input {ch4/security.tex}
+\input{ch4/problems.tex}   
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

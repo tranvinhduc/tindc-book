@@ -1,0 +1,33 @@
+\setlength{\unitlength}{2044sp}%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(4926,5829)(4039,-6823)
+\thinlines
+{\color[rgb]{0,0,0}\put(7201,-3909){\oval(3512,4544)[br]}
+\put(7201,-3909){\oval(3512,4546)[tr]}
+\put(7201,-1636){\vector(-1, 0){0}}
+}%
+{\color[rgb]{0,0,0}\put(4096,-2311){\framebox(3105,1305){}}
+}%
+{\color[rgb]{0,0,0}\put(4051,-4561){\framebox(3105,1305){}}
+}%
+{\color[rgb]{0,0,0}\put(4051,-6811){\framebox(3105,1305){}}
+}%
+{\color[rgb]{0,0,0}\put(5581,-2330){\vector( 0,-1){900}}
+}%
+{\color[rgb]{0,0,0}\put(5626,-4561){\vector( 0,-1){900}}
+}%
+\put(4861,-1726){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Nạp
+        lệnh}%
+}}}}
+\put(4616,-3931){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Giải
+        mã lệnh}%
+}}}}
+\put(4511,-6271){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Thực
+        hiện lệnh}%
+}}}}
+\end{picture}%

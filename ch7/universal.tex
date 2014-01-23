@@ -1,0 +1,317 @@
+\section{Các ngôn ngữ lập trình phổ dụng}
+Trong Chương~\ref{ch6} ta đã nghiên cứu nhiều đặc điểm của ngôn ngữ lập trình bậc
+cao. Trong mục này ta sẽ áp dụng kiến thức về tính toán để xác định những đặc điểm nào là
+thực sự cần thiết. Ta sẽ thấy rằng hầu hết những đặc điểm của ngôn ngữ bậc cao ngày nay
+thực ra chỉ giúp tiện lợi khi sử dụng hơn là đóng vai trò làm tăng khả năng cơ bản của
+ngôn ngữ.
+
+Cách tiếp cận của ta là mô tả một ngôn ngữ ra lệnh cho phép ta biểu diễn các chương trình
+tính mọi hàm tính được bởi máy Turing (hay tương đương là mọi hàm tính được). Bởi vậy, nếu
+một lập trình viên trong tương lai thấy một bài toán không thể giải được dùng ngôn ngữ
+này, lý do sẽ không phải do hạn chế của ngôn ngữ mà là do không có thuật toán để giải
+quyết bài toán đó. Một ngôn ngữ lập trình với tính chất này được gọi là \textbf{ngôn ngữ
+  lập trình phổ dụng}.
+
+Bạn sẽ ngạc nhiên khi thấy rằng một ngôn ngữ lập trình phổ dụng không nhất thiết phải phức
+tạp. Thay vào đó, ngôn ngữ mà ta trình bày khá đơn giản. Ta sẽ gọi nó là Bare~Bones bởi vì
+nó chỉ gồm tập tối thiểu các yêu cầu của một ngôn ngữ lập trình phổ dụng.
+
+\subsection*{Ngôn ngữ Bare Bones}
+
+Ta bắt đầu bằng việc xem xét các khai báo trong các ngôn ngữ lập trình. Các khai báo này
+cho phép người lập trình suy nghĩ về các cấu trúc dữ liệu và kiểu dữ liệu (như mảng các
+giá trị số hay xâu ký tự thuộc bảng chữ nào đó) dù máy chỉ đơn thuần thao tác với các bít
+chứ không quan tâm đến các xâu biểu diễn gì. Trước khi đưa vào máy để thực hiện, một lệnh
+ở mức cao liên quan đến các kiểu dữ liệu và cấu trúc phải được dịch thành các lệnh ở mức
+máy để thao tác với các xâu bít để mô phỏng các hoạt động được yêu cầu.
+
+Để thuận tiện, ta có thể diễn giải các xâu bít này như những biểu diễn nhị phân của các
+giá trị nguyên không âm. Bởi vậy, không mất tổng quát mọi tính toán thực hiện bởi một máy
+có thể được xem như các tính toán liên quan đến các số nguyên không âm. Và các ngôn ngữ
+lập trình có thể được đơn giản hoá bằng cách yêu cầu người lập trình biểu diễn thuật toán
+theo cách này (dù rằng điều này có thể gây khó khăn hơn trong lập trình).
+
+Vì mục đích của ta là phát triển ngôn ngữ Bare~Bones đơn giản nhất có thể nên ta sẽ chọn
+cách diễn giải này. Có nghĩa rằng, mọi biến trong Bare~Bones sẽ được xem xét như một dãy
+bít, và được diễn giải như một số nguyên không âm theo ký hiệu nhị phân. Ví dụ, biến có
+giá trị là xâu bít $10$ sẽ được gọi là chứa giá trị hai, và biến được gán bởi xâu bít
+$101$ được gọi là chứa giá trị năm.
+
+Theo cách này, mọi biến trong một chương trình Bare~Bones có cùng kiểu, nên ta không cần
+khai báo xem tên biến và kiểu của nó là gì. Khi dùng Bare~Bones, lập trình viên có thể
+dùng luôn biến mới khi cần, và hiểu rằng nó luôn tham chiếu tới một xâu bít diễn giải như
+một giá trị nguyên không âm.
+
+Tất nhiên, bộ dịch cho ngôn ngữ Bare Bone phải có khả năng phân biệt các tên biến với các
+từ khác. Điều này được chỉ ra bởi cú pháp của Bare~Bones sao cho vai trò của mọi từ được
+xác định bởi cú pháp duy nhất. Với mục đích này, ta quy định rằng tên biến phải bắt đầu
+bởi một chữ trong bảng chữ tiếng Anh, và theo sau bởi một tổ hợp các chữ hoặc số (từ $0$
+đến $9$). Vậy các xâu \texttt{XYZ}, \texttt{B747}, \texttt{abcdefghi}, và \texttt{X5Y} có
+thể được sử dụng như tên biến, trong khi \texttt{2G5}, \texttt{\%o}, và \texttt{x.y} không
+phải.
+
+Ta cùng xem xét các lệnh trong Bare~Bones. Ngôn ngữ này có ba lệnh gán và một lệnh điều
+khiển biểu diễn việc lặp. Ngôn ngữ này không có định dạng (free-format), bởi vậy mỗi lệnh
+phải kết thúc bởi một dấu chấm phảy, điều này để dễ dàng dịch các lệnh riêng nhưng đặt
+trên cùng một dòng. Tuy vậy, để dễ đọc ta thường đặt chỉ một lệnh trên một dòng.
+
+Cả ba lệnh gán của ngôn ngữ Bare~Bones đều yêu cầu các nội dung của biến gán cũng chính là
+biến yêu cầu được thay đổi trong lệnh. Lệnh đầu tiên cho phép ta gán giá trị không cho một
+biến. Cú pháp của nó là
+\begin{flushleft}
+ \qquad \qquad \qquad \texttt{clear \textit{tên};}
+\end{flushleft}
+với \texttt{tên} có thể là mọi tên biến có thể.
+
+Hai lệnh gán còn lại về cơ bản là ngược nhau
+\begin{flushleft}
+  \qquad\qquad\qquad\texttt{incr \textit{tên};}
+\end{flushleft}
+và
+\begin{flushleft}
+ \qquad\qquad\qquad \texttt{decr \textit{tên};}
+\end{flushleft}
+Một lần nữa, \texttt{\it tên} biểu diễn mọi tên biến. Lệnh trước làm tăng giá trị của biến
+lên một và gán lại vào chính nó. Bởi vậy nếu biến \texttt{Y} đã có giá trị năm trước đó
+thì lệnh
+\begin{flushleft}
+ \qquad\qquad\qquad \texttt{incr Y;}
+\end{flushleft}
+sau khi được thực hiện sẽ làm giá trị của \texttt{Y} tăng lên thành sáu.
+
+Ngược lại, lệnh \texttt{decr} được dùng để làm giảm giá trị của biến đi một và gán lại cho
+chính biến đó. Có một ngoại lệ là khi biến đã được gán bằng không thì lệnh không làm thay
+đổi giá trị nữa. Bởi vậy, nếu giá trị của \texttt{Y} là năm thì sau khi lệnh
+\begin{flushleft}
+\qquad\qquad\qquad  \texttt{decr Y;}
+\end{flushleft}
+được thực hiện thì giá trị bốn sẽ được gán cho \texttt{Y}. Tuy nhiên, nếu giá trị của
+\texttt{Y} đã bằng không thì giá trị này vẫn là không sau khi lệnh được thực hiện.
+
+Bare~Bones chỉ cung cấp một cấu trúc điều khiển biểu diễn bởi cặp \texttt{while-end}. Dãy
+lệnh sau
+\begin{flushleft}
+  \qquad \qquad\qquad \texttt{while \textit{tên} not 0 do;} \\
+  \qquad\qquad\qquad\quad \texttt{.} \\
+  \qquad\qquad\qquad\quad \texttt{.} \\
+  \qquad\qquad\qquad\quad \texttt{.} \\
+  \qquad\qquad\qquad\texttt{end;}
+\end{flushleft}
+(ở đó \texttt{tên} biểu diễn mọi tên biến có thể) sẽ thực hiện lặp lại một lệnh hoặc một
+dãy lệnh nằm giữa cặp \texttt{while} và \texttt{end} cho đến khi giá trị của biến
+\texttt{\it tên} bằng không. Chính xác hơn, nếu bắt gặp một cấu trúc \texttt{while-end}
+khi đang thực hiện chương trình thì đầu tiên giá trị của biến được so sánh với không. Nếu
+nó bằng không, cấu trúc này bị bỏ qua, và tiếp tục thực hiện tiếp lệnh ngay sau lệnh
+\texttt{end}. Tuy vậy, nếu giá trị của biến khác không, dãy lệnh bên trong cấu trúc
+\texttt{while-end} được thực hiện và điều khiển được trả lại vị trí của lệnh
+\texttt{while}, và lúc này việc so sánh lại được thực hiện một lần nữa. Chú ý rằng khó
+khăn của việc điều khiển lặp được đặt cho người lập trình, anh ta phải xác định rõ ràng
+giá trị của biến nào bị thay đổi trong thân vòng lặp để tránh vòng lặp vô hạn. Ví dụ, dãy
+lệnh
+\begin{flushleft}
+  \qquad \qquad\qquad \texttt{incr X;}\\
+  \qquad \qquad\qquad \texttt{while \textit{X} not 0 do;} \\
+  \qquad \qquad\qquad \quad \texttt{incr Z;} \\
+  \qquad\qquad\qquad\texttt{end;}
+\end{flushleft}
+cho kết quả là một quá trình vô hạn vì khi lệnh \texttt{while} thực hiện, giá trị của
+\texttt{X} không bao giờ bằng không, trong khi đó dãy
+\begin{flushleft}
+  \qquad \qquad\qquad \texttt{incr X;} \\
+  \qquad \qquad\qquad \texttt{while \textit{X} not 0 do;} \\
+  \qquad \qquad\qquad \quad \texttt{incr Z;} \\
+  \qquad \qquad\qquad \quad \texttt{incr X;} \\
+  \qquad\qquad\qquad\texttt{end;}
+\end{flushleft}
+cuối cùng cũng sẽ dừng và đặt giá trị ban đầu của \texttt{X} cho \texttt{Z}.
+
+Để ý rằng các lệnh \texttt{while} và \texttt{end} phải xuất hiện theo cặp và lệnh
+\texttt{while} phải xuất hiện trước. Tuy vậy, một lệnh \texttt{while-end} có thể xuất hiện
+bên trong các lệnh lặp bằng cách đặt nó trong một cặp \texttt{while-end} khác. Trong các
+trường hợp như thế này cặp \texttt{while} và \texttt{end} được hoàn thành bằng cách xem
+xét toàn bộ chương trình để gắn mỗi lệnh \texttt{end} với lệnh \texttt{while} gần nó nhất
+mà chưa được ghép cặp. Mặc dù không cần thiết về mặt cú pháp nhưng chúng ta thường sắp xếp
+thụt vào để dễ đọc đối với các cấu trúc kiểu này.
+
+
+Một ví dụ để kết thúc mục này là dãy lệnh trong Hình~\ref{fig:fig114}. Dãy lệnh này thực
+hiện tính tích của các giá trị trong \texttt{X} và \texttt{Y} sau đó gán vào \texttt{Z},
+mặt khác nó cũng ảnh hưởng đến giá trị ban đầu của \texttt{X}. (Cấu trúc
+\texttt{while-end} được điều khiển bởi biến \texttt{W} nhằm lưu trữ giá trị gốc cho biến
+\texttt{Y}.)
+
+\begin{figure}[tbh]
+  \begin{flushleft}
+    \qquad \qquad\qquad  \texttt{clear Z;}\\
+    \qquad \qquad\qquad \texttt{while X not 0 do;} \\
+    \qquad \qquad\qquad \qquad \texttt{clear W;} \\
+    \qquad \qquad\qquad \qquad \texttt{while Y not 0 do;} \\
+    \qquad \qquad\qquad \qquad \qquad \texttt{incr Z;} \\
+    \qquad \qquad\qquad \qquad \qquad \texttt{incr W;} \\
+    \qquad \qquad\qquad \qquad \qquad \texttt{decr Y;} \\
+    \qquad \qquad\qquad \qquad \texttt{end;} \\
+    \qquad \qquad\qquad \qquad \texttt{while W not 0 do;} \\
+    \qquad \qquad\qquad \qquad \qquad \texttt{incr Y;}\\
+    \qquad \qquad\qquad \qquad \qquad \texttt{decr W;}\\
+    \qquad \qquad\qquad \qquad \texttt{end;} \\
+    \qquad \qquad\qquad \qquad \texttt{decr X;} \\
+    \qquad\qquad\qquad\texttt{end;}
+\end{flushleft}
+  \caption{Một chương trình Bare Bone để tính \texttt{X*Y}}
+  \label{fig:fig114}
+\end{figure}
+
+\subsection*{Lập trình Bare Bone}
+Ta nhắc lại rằng mục đích của việc trình bày Bare~Bones là để thảo luận về khả năng về mặt
+lý thuyết và thực tế của máy. Bare~Bones có thể rất khó khăn trong ứng dụng thực tế. Tuy
+nhiên, như ta sẽ thấy ngay trong mục sau, nó lại cho ta mọi khả năng của một ngôn ngữ lập
+trình phổ dụng. Bây giờ, ta sẽ xem xét xem làm thế nào mà Bare~Bones có thể được dùng để
+biểu diễn một vài thao tác cơ bản.
+
+Đầu tiên ta để ý rằng bằng cách tổ hợp các lệnh gán, ta có thể gán cho một biến một giá
+trị tuỳ ý ( mọi số nguyên không âm). Ví dụ, dãy lệnh sau đây gán giá trị ba cho
+biến~\texttt{X} bằng cách đầu tiên gán nó với giá trị không và sau đó tăng giá trị này lên
+ba lần:
+\begin{flushleft}
+\qquad\qquad\qquad  \texttt{clear X;} \\
+\qquad\qquad\qquad  \texttt{incr X;} \\
+\qquad\qquad\qquad  \texttt{incr X;} \\
+\qquad\qquad\qquad  \texttt{incr X;}
+\end{flushleft}
+
+Một thao tác phổ biến khác là sao chép dữ liệu từ một vị trí tới vị trí khác. Nói theo
+cách của ngôn ngữ Bare~Bones, ta cần gán giá trị một biến bằng một biến khác. Điều này có
+thể thực hiện bằng cách xoá biến cần gán và sau đó lặp lại việc tăng nó lên một số lần
+thích hợp. Thực ra ta thấy rằng dãy lệnh
+\begin{flushleft}
+\qquad\qquad\qquad  \texttt{clear Z;} \\
+\qquad\qquad\qquad  \texttt{while  X not 0 do;} \\
+\qquad\qquad\qquad  \qquad \texttt{incr Z;} \\
+\qquad\qquad\qquad  \qquad \texttt{decr X;} \\
+\qquad\qquad\qquad  \texttt{incr X;}
+\end{flushleft}
+chuyển giá trị được gắn với \texttt{X} cho \texttt{Z}. Tuy vậy, dãy lệnh này lại phá huỷ
+giá trị của \texttt{X}. Để tránh điều này, ta dùng một biến tạm để chuyển dữ liệu ban đầu
+vào biến này. Sau đó ta dùng biến tạm này làm dữ liệu nguồn để lưu trữ lại giá trị của biến
+gốc, đồng thời gán giá trị có biến cần gán bằng biến gốc. Theo cách này, việc chuyển dữ
+liệu từ biến \texttt{Today} thành \texttt{Yesterday} có thể được thực hiện dùng dãy lệnh
+như trong Hình~\ref{fig:fig115}.
+
+
+Ta chọn cú pháp
+\begin{flushleft}
+\qquad\qquad\qquad  \texttt{copy \textit{tên1} to \textit{tên2};}
+\end{flushleft}
+(với \texttt{tên1} và \texttt{tên2} biển diễn các tên biến) như kí hiệu viết tắt cho một
+cấu trúc lệnh có dạng như Hình~\ref{fig:fig115}. Bởi vậy, mặc dù Bare~Bones bản thân nó
+không có lệnh \texttt{copy}, ta thường viết chương trình có lệnh này, và ta ngầm hiểu rằng
+ta đã chuyển một cách không hình thức thành các chương trình Bare~Bones thực sự bằng cách
+thay thế lệnh \texttt{copy} bằng các cấu trúc \texttt{while-end} thích hợp (với các biến
+tạm có tên không xung đột với tên đã được sử dụng ở nơi khác trong chương trình.)
+
+\begin{figure}[tbh]
+  \begin{flushleft}
+    \qquad \qquad\qquad  \texttt{clear Aux;}\\
+    \qquad \qquad\qquad  \texttt{clear Tomorrow;}\\
+    \qquad \qquad\qquad \texttt{while Today not 0 do;} \\
+    \qquad \qquad\qquad \qquad \texttt{incr  Aux;} \\
+    \qquad \qquad\qquad \qquad \texttt{decr Today;} \\
+    \qquad \qquad\qquad \texttt{end;} \\
+
+    \qquad\qquad \qquad \texttt{while Aux not 0 do;} \\
+    \qquad\qquad \qquad \qquad \texttt{incr Today;} \\
+    \qquad\qquad \qquad \qquad \texttt{incr Tomorrow;} \\
+    \qquad\qquad \qquad \qquad \texttt{decr Aux;} \\
+    \qquad\qquad \qquad \texttt{end;}
+  \end{flushleft}
+  \caption{Cài đặt hàm `` sao chép \texttt{Today} thành
+    \texttt{Tomorrow}''}
+  \label{fig:fig115}  
+\end{figure}  
+
+\subsection*{Tính phổ dụng của Bare Bones}
+Bây giờ ta sẽ áp dụng luận đề Church-Turing để khẳng định rằng Bare~Bones là một ngôn ngữ
+lập trình phổ dụng. Đầu tiên ta nhận thấy rằng mọi chương trình được viết trong Bare~Bones
+có thể được nhìn như một việc tính toán hàm. Các hàm với đầu vào là các giá trị được gán
+cho các biến trước khi thực hiện chương trình, và đầu ra của hàm là giá trị của các biến
+khi chương trình kết thúc. Để tính hàm, ta đơn thuần chỉ chạy chương trình, bắt đầu
+với việc khởi tạo giá trị cho các biến, và quan sát giá trị của các biến khi chương trình
+kết thúc.
+
+Dưới các điều kiện này, chương trình
+\begin{flushleft}
+\qquad\qquad\qquad  \texttt{incr X;}
+\end{flushleft}
+tính toán cùng một hàm (hàm tính số liền sau) được tính bởi máy Turing trong ví dụ trong
+Mục~\ref{sec:112}. Thật vậy, nó tăng giá trị gắn với biến \texttt{X} lên một. Tương tự,
+nếu chúng ta diễn giải các biến \texttt{X} và \texttt{Y} như các đầu vào và biến
+\texttt{Z} như đầu ra thì chương trình
+\begin{flushleft}
+  \qquad \qquad\qquad  \texttt{copy Y to Z;}\\
+  \qquad \qquad\qquad \texttt{while X not 0 do;} \\
+  \qquad \qquad\qquad \qquad \texttt{incr  Z;} \\
+  \qquad \qquad\qquad \qquad \texttt{decr X;} \\
+  \qquad \qquad\qquad \texttt{end;} \\
+\end{flushleft}
+trực tiếp tính toán hàm cộng.
+
+Các nhà nghiên cứu đã chứng minh rằng ngôn ngữ lập trình Bare~Bones có thể được sử dụng để
+biểu diễn các thuật toán để tính mọi hàm tính được bởi máy Turing. Kết hợp với luận đề
+Church-Turing nó chỉ ra rằng mọi hàm đều có thể được tính toán bởi một chương trình viết
+bằng Bare~Bones. Bởi vậy Bare~Bones là một ngôn ngữ lập trình phổ dụng theo nghĩa rằng,
+nếu có một thuật toán để giải quyết bài toán, thì bài toán đó có thể được giải bởi một
+chương trình Bare~Bones nào đó. Nói tóm lại, Bare~Bones về mặt lý thuyết có thể dùng như
+một ngôn ngữ lập trình đa năng.
+
+Ta nói \textit{về mặt lý thuyết} vì một ngôn ngữ kiểu như thế này chắc chắn không tiện lợi
+như các ngôn ngữ bậc cao đã được giới thiệu trong Chương~\ref{}. Tuy vậy, mỗi ngôn ngữ về
+cơ bản đều chứa các đặc điểm của Bare~Bones như phần cơ bản nhất. Và phần cơ bản này đảm
+bảo tính phổ dụng cho các ngôn ngữ bậc cao này; còn các đặc điểm thêm vào của ngôn ngữ chỉ
+giúp làm cho nó thêm tiện lợi.
+
+Mặc dù không thực tế trong môi trường lập trình ứng dụng, các ngôn ngữ kiểu Bare~Bones lại
+hay được dùng trong nghiên cứu lý thuyết khoa học máy tính. Ví dụ, trong phụ lục~\ref{} ta
+dùng Bare~Bones như một công cụ để giải quyết câu hỏi về tính tương đương của cấu trúc lặp
+và cấu trúc đệ quy nảy sinh trong Chương~\ref{}. Nhờ công cụ này, nghi ngờ của ta về tính
+tương đương của hai cấu trúc này đã được chứng minh.
+
+\subsection*{Câu hỏi \& Bài tập}
+\begin{enumerate}
+\item Chỉ ra rằng lệnh \texttt{invert X;} (để chuyển các giá trị của \texttt{X} thành
+  không nếu nó được khởi tạo khác không và thành một nếu nếu giá trị khởi tạo bằng không)
+  có thể được mô phỏng bởi một đoạn chương trình Bare~Bones.
+
+\item Chỉ ra rằng ngôn ngữ đơn giản Bare~Bones cũng chưa phải là tối thiểu bằng cách chứng
+  minh rằng lệnh \texttt{clear} có thể được thay thế bằng tổ hợp của các lệnh khác trong
+  ngôn ngữ.
+
+\item Chỉ ra rằng cấu trúc \texttt{if-then-else} có thể mô phỏng dùng Bare~Bones. Có nghĩa
+  rằng, bạn hãy viết một dãy lệnh trong Bare~Bones mô phỏng lệnh
+  \begin{flushleft}
+    \qquad \qquad  \texttt{if X not 0 then S1 else S2;}
+  \end{flushleft}
+  với \texttt{S1} và \texttt{S2} là một dãy lệnh bất kỳ.
+
+\item Chỉ ra rằng mỗi lệnh Bare~Bones có thể biểu diễn theo ngôn ngữ máy ở Phụ
+  lục~\ref{phuluc1} (Bởi vậy Bare~Bones có thể được sử dụng như một ngôn ngữ lập trình cho
+  một máy kiểu này.)
+
+\item Làm thế nào để có thể tính toán các số nguyên âm với Bare~Bones?
+
+\item Mô tả hàm được tính bởi chương trình Bare~Bones sau đây, giả sử rằng đầu vào của hàm
+  được biểu diễn bởi \texttt{X} và đầu ra bởi \texttt{Z}:
+  \begin{flushleft}
+    \qquad \qquad  \texttt{clear Z;}\\
+    \qquad \qquad \texttt{while X not 0 do;} \\
+    \qquad \qquad \qquad \texttt{incr  Z;} \\
+    \qquad \qquad \qquad \texttt{incr  Z;} \\
+    \qquad \qquad \qquad \texttt{decr  X;} \\
+    \qquad \qquad \texttt{end;} 
+  \end{flushleft}
+\end{enumerate}
+
+ 
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

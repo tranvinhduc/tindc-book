@@ -1,0 +1,312 @@
+\section{Bài tập cuối chương}
+  
+
+\begin{multicols}{2}
+  \begin{enumerate}
+
+  \item Chỉ ra xem làm thế nào cấu trúc có dạng:
+    \begin{flushleft}
+      \quad\texttt{while X equals 0 do;} \\
+      \quad\quad \texttt{.} \\
+      \quad\quad \texttt{.} \\
+      \quad\quad \texttt{.} \\
+      \quad\texttt{end;}
+    \end{flushleft}
+    có thể được mô phỏng với Bare~Bones.
+
+  \item Viết một chương trình Bare~Bones đặt giá trị $1$ vào biến \texttt{Z} nếu biến
+    \texttt{X} nhỏ hơn hoặc bằng biến \texttt{Y}, ngược lại đặt giá trị $0$ vào biến
+    \texttt{Z}.
+
+  \item Viết một chương trình Bare~Bones đặt \texttt{X} lần giá trị $2$ (hay $2^X$) vào
+    biến~\texttt{Z}.
+
+  \item Trong mỗi trường hợp sau đây hãy viết một đoạn chương trình Bare~Bones thực hiện
+    các việc được chỉ ra dưới đây:
+    \begin{enumerate}
+    \item Gán \texttt{Z} bằng $0$ nếu \texttt{X} là số chẵn; ngược lại gán \texttt{Z} bằng
+      $1$.
+
+    \item Tính tổng các số nguyên từ $0$ đến \texttt{X}.
+    \end{enumerate}
+
+
+  \item Viết một đoạn chương trình Bare~Bones chia giá trị \texttt{X} cho giá trị
+    \texttt{Y}. Ta quy ước bỏ qua phần dư; có nghĩa rằng, $1$ chia $2$ bằng $0$ và $5$
+    chia~$3$ bằng $1$.
+
+  \item Mô tả hàm tính bởi chương trình Bare~Bones dưới đây, với giả sử đầu vào biểu diễn
+    bởi \texttt{X} và \texttt{Y}; còn đầu ra biểu diễn bởi bởi \texttt{Z}:
+    \begin{flushleft}
+      \quad\texttt{copy X to Z;} \\
+      \quad\texttt{copy Y to Aux;} \\
+      \quad\texttt{while Aux not 0 do;} \\
+      \quad\quad \texttt{decr Z} \\
+      \quad\quad \texttt{decr Aux} \\
+      \quad\texttt{end;}
+    \end{flushleft}
+
+  \item Mô tả hàm tính bởi chương trình Bare~Bones dưới đây, với giả sử đầu vào biểu diễn
+    bởi \texttt{X} và \texttt{Y}; còn đầu ra biểu diễn bởi bởi \texttt{Z}:
+    \begin{flushleft}
+      \quad\texttt{clear Z;} \\
+      \quad\texttt{copy X to Aux1;} \\
+      \quad\texttt{copy Y to Aux2;} \\
+      \quad\texttt{while Aux1 not 0 do;} \\
+      \quad \quad\texttt{while Aux2 not 0 do;} \\
+      \quad \quad\quad \texttt{decr Z} \\
+      \quad \quad\quad \texttt{decr Aux2} \\
+      \quad \quad\texttt{end;} \\
+      \quad \quad \texttt{decr Aux1;} \\
+      \quad\texttt{end;} \\
+    \end{flushleft}
+
+  \item Viết một chương trình Bare~Bones tính tuyển loại của hai biến \texttt{X} và
+    \texttt{Y}, đặt kết quả vào biến \texttt{Z}. Giả sử rằng~\texttt{X} và~\texttt{Y} khởi
+    tạo với giá trị chỉ bằng~$0$ hoặc~$1$.
+
+  \item Chỉ ra rằng nếu ta cho phép các lệnh trong Bare~Bones được gán nhãn bởi một giá
+    trị nguyên và thay thế cấu trúc lặp \texttt{while} với lệnh nhảy điều kiện biểu diễn
+    dưới dạng
+    \begin{flushleft}
+      \texttt{if \textit{tên} not 0 goto \textit{nhãn};}
+    \end{flushleft}
+    với \texttt{\it tên} có thể là mọi biến và \texttt{\it nhãn} là một giá trị nguyên
+    được sử dụng để gán cho một lệnh nào đó, thì ngôn ngữ mới vẫn là ngôn ngữ lập
+    trình phổ dụng.
+
+  \item Trong chương này ta đã thấy cách cài đặt lệnh
+    \begin{flushleft}
+      \texttt{copy \textit{tên1} to \textit{tên2};}
+    \end{flushleft}
+    trong Bare~Bones. Chỉ ra xem làm thế nào lệnh này có thể được cài đặt nếu cấu trúc
+    \texttt{while} được thay thế bởi cấu trúc lặp sau
+    \begin{flushleft}
+      \texttt{repeat \dots until (\textit{tên} equals 0)}
+    \end{flushleft}
+
+  \item Chỉ ra rằng ngôn ngữ Bare~Bones có thể vẫn là ngôn ngữ lập trình phổ dụng nếu lệnh
+    \texttt{while} được thay thế bởi cấu trúc lặp sau 
+    \begin{flushleft}
+      \texttt{repeat \dots until (\textit{tên} equals 0)}
+    \end{flushleft}
+
+  \item Thiết kế một máy Turing chỉ dùng duy nhất một ô trên băng nhưng nó không bao giờ
+    đạt được trạng thái dừng.
+
+  \item Thiết kế một máy Turing đặt các số~$0$ vào mọi ô bên trái của ô nhớ hiện thời cho
+    tới khi nó gặp một ô nhớ chứa dấu sao.
+
+  \item Giả sử xâu gồm các số $0$ và $1$ trên băng của một máy Turing được giới hạn bởi
+    các dấu sao ở hai đầu. Thiết kế một máy Turing quay xâu bít này sang phải một ô, giả
+    sử rằng máy bắt đầu với ô nhớ hiện hành chứa dấu sao bên phải nhất của xâu.
+
+  \item Thiết kế một máy Turing đảo xâu bít~$0$ và $1$ nằm giữa ô nhớ hiện hành (có chứa
+    dấu sao) và ô nhớ chứa dấu sao đầu tiên bên trái.
+
+  \item Tóm tắt luận đề Church-Turing.
+
+  \item Chương trình Bare~Bones sau đây có tự kết thúc? Giải thích câu trả lời của bạn
+    \begin{flushleft}
+      \texttt{copy X to Y;} \\
+      \texttt{incr Y;} \\
+      \texttt{incr Y;} \\
+      \texttt{while X not 0 do;} \\
+      \quad \texttt{decr X;} \\
+      \quad \texttt{decr X;} \\
+      \quad \texttt{decr Y;} \\
+      \quad \texttt{decr Y;} \\
+      \texttt{end;}\\
+      \texttt{decr Y;} \\
+      \texttt{while Y not 0 do;} \\
+      \quad \texttt{incr X;} \\
+      \quad \texttt{decr Y;} \\
+      \texttt{end;}\\
+      \texttt{while X not 0 do;}\\
+      \texttt{end;}\\
+    \end{flushleft}
+
+
+  \item Chương trình Bare~Bones sau đây có tự kết thúc? Giải thích câu trả lời của bạn.
+    \begin{flushleft}
+      \texttt{while X not 0 do;}\\
+      \texttt{end;}\\
+    \end{flushleft}
+
+  \item Chương trình Bare~Bones sau đây có tự kết thúc? Giải thích câu trả lời của bạn.
+    \begin{flushleft}
+      \texttt{while X not 0 do;}\\
+      \quad \texttt{decr X;}\\
+      \texttt{end;}\\
+    \end{flushleft}
+
+  \item Phân tích tính hợp lệ của cặp lệnh sau đây:
+    \begin{flushleft}
+      \texttt{Lệnh sau là đúng.}\\
+      \texttt{Lênh trước là sai.}\\
+    \end{flushleft}
+
+  \item Phân tích tính hợp lệ của khẳng định ``Người đầu bếp trên một con tàu nấu ăn cho
+    mọi người và chỉ những những người không nấu được cho bản thân anh ta.'' (Ai nấu ăn
+    cho người đầu bếp?)
+
+  \item Giả sử rằng bạn ở trong một thành phố mà mỗi người hoặc là kẻ nói thật, hoặc là kẻ
+    nói dối. (Một người nói thật luôn nói sự thật, một người nói dối luôn nói dối.) Bạn có
+    thể dùng câu hỏi gì để hỏi một người và biết anh ta là nói thật hay nói dối?
+
+  \item Tóm tắt ý nghĩa của các máy Turing trong lý thuyết khoa học máy tính.
+
+  \item Tóm tắt ý nghĩa của bài toán dừng trong lý thuyết khoa học máy tính.
+
+  \item Giả sử rằng bạn cần phải tìm ra xem có ai trong nhóm của đã sinh vào một ngày đặc
+    biệt nào đó. Một cách tiếp cận là có thể hỏi các thành viên vào một lúc nào đó. Nếu
+    bạn theo cách tiếp cận này, sự xuất hiện của sự kiện nào có thể chỉ ra cho bạn rằng có
+    một thành viên như vậy? Sự kiện nào có thể chỉ cho bạn rằng không có thành viên nào
+    như vậy? Bây giờ giả sử rằng bạn phải tìm ra xem có ít nhất một số nguyên dương có
+    tính chất đặc biệt nào đó và bạn áp dụng cùng cách tiếp cận kiểm tra một cách có hệ
+    thống các số nguyên cùng một lúc. Nếu, trên thực tế, có nhiều số nguyên có tính chất
+    này, làm thế nào bạn có thể tìm ra? Nếu, tuy vậy, không có số nguyên nào có tính chất
+    này làm thế nào bạn có thể tìm ra? Có phải nhiệm vụ kiểm tra xem một giả thuyết là
+    đúng có nhất thiết đối xứng với nhiệm vụ kiểm tra xem nó có sai hay không?
+
+
+  \item Có phải bài toán tìm kiếm một giá trị đặc biệt trong danh sách là bài toán đa
+    thức? Chứng minh câu trả lời của bạn.
+
+  \item Thiết kế một thuật toán quyết định xem một số nguyên có là nguyên tố hay không. Có
+    phải lời giải của bạn là hiệu quả? Lời giải của bạn là trong thời gian đa thức hay
+    không?
+
+  \item Có phải một lời giải đa thức cho một bài toán luôn tốt hơn so với một lời giải mũ?
+    Giải thích câu trả lời của bạn.
+
+  \item Có phải một bài toán có một lời giải đa thức có nghĩa rằng nó luôn được giải trong
+    thời gian có thể chấp nhận trong thực tế? Giải thích câu trả lời của bạn.
+
+
+  \item Lập trình viên Charlie được giao bài toán phân nhóm (của một số chẵn người) vào
+    thành hai nhóm con rời nhau và có số người bằng nhau sao cho sự khác biệt về tuổi của
+    mỗi nhóm con là lớn nhất có thể. Anh ta đề nghị một lời giải là liệt kê mọi khả năng
+    chia thành hai nhóm, tính toán sự khác biệt về tuổi của mỗi cặp, và lựa chọn ra cặp
+    nhóm có khác biệt nhiều nhất. Lập trình viên Mary có một giải pháp khác, chị đề nghị
+    rằng đầu tiên sắp xếp nhóm ban đầu theo tuổi và sau đó chia thành hai nhóm con. Mỗi
+    nhóm con gồm một nửa từ nửa những người trẻ hơn và nửa còn lại từ những người già
+    hơn. Hãy chỉ ra độ phức tạp của mỗi lời giải? Có phải bài toán này có độ phức tạp là
+    đa thức, $\mathbf{NP}$, hay không đa thức?
+
+  \item Tại sao cách tiếp cận sinh mọi khả năng có thể sắp xếp danh sách sau đó chọn một
+    cách sắp xếp mong muốn không phải là cách hợp lý để sắp xếp một danh sách?
+
+  \item Giả sử trò chơi xổ số dựa trên việc chọn đúng bốn số nguyên, mỗi số trong khoảng
+    từ $1$ đến $50$. Hơn nữa giả sử rằng giải thưởng là quá lớn đến mức mà người mua sẽ có
+    lợi nếu anh ta mua một vé số riêng cho mỗi tổ hợp số. Nếu bạn mất một giây để mua một
+    vé, bạn sẽ mất bao lâu để mua một vé cho mỗi tổ hợp số? Thời gian này sẽ thay đổi thế
+    nào nếu công ty xổ số yêu cầu chọn năm số thay vì bốn? bài toán này phải làm gì với
+    kiến thức trong chương này?
+
+  \item Thuật toán dưới đây có đơn định không?
+    \begin{description}
+    \item [] \textsl{\textbf{procedure} mystery (Number)} 
+
+    \item []\textsl{\textbf{if} (Number > 5)} 
+
+    \item[] \textsl{\textbf{then} (trả lời ``yes'')} 
+
+    \item [] \textsl{\textbf{else} (lấy một giá trị nhỏ hơn $5$ và đưa số này ra làm câu
+        trả lời)}
+    \end{description}
+
+  \item Thuật toán dưới đây có đơn định không? Hãy giải thích câu trả lời của bạn.
+    \begin{description}
+    \item []\textsl{Lái xe đi thẳng.}
+
+    \item [] \textsl{Đến chỗ đường giao thứ ba, hỏi người đứng ở góc đường xem nên rẽ phải
+        hay rẽ trái.}
+
+    \item[] \textsl{Rẽ theo hướng người đó chỉ.}
+
+    \item []\textsl{Lái xe qua thêm hai khối nhà và dừng ở đó.}
+    \end{description}
+
+  \item Xác định các điểm không đơn định trong thuật toán sau:
+    \begin{description}
+    \item []\textsl{Chọn ba số giữa $10$ và $100$.}
+
+    \item [] \textsl{\textbf{if} (tổng của số được chọn lớn hơn~$150$)}
+
+    \item[] \textsl{\textbf{then} (trả lời ``yes'')}
+
+    \item []\textsl{\textbf{else} (Chọn một trong ba số đã chọn và đưa ra số ngày như câu
+        trả lời)}
+    \end{description}
+
+  \item Thuật toán sau đây có độ phức tạp đa thức hay không đa thức? Giải thích câu trả
+    lời của bạn.
+    \begin{description}
+    \item []\textsl{\textbf{procedure} mystery (ListOfNumbers)}
+
+    \item [] \textsl{Chọn một tập các số trong ListOfNumbers.}
+
+    \item[] \textsl{\textbf{if} (các số trong tập này cộng thêm với $125$)}
+
+    \item []\textsl{\textbf{then} (Câu trả lời ``yes'')}
+
+    \item []\textsl{\textbf{else} (Không đưa ra câu trả lời)}
+
+    \end{description}
+
+  \item Các bài toán dưới đây có thuộc lớp~$\mathbf{P}$?
+    \begin{enumerate}
+    \item Một bài toán với độ phức tạp~$n^2$
+
+    \item Một bài toán với độ phức tạp~$3n$
+
+    \item Một bài toán với độ phức tạp~$n^2 + 2n$
+
+    \item Một bài toán với độ phức tạp~$n!$
+    \end{enumerate}
+
+  \item Tóm tắt sự phân biệt giữa khẳng định một bài toán là bài toán đa thức và khẳng
+    định một bài toán là bài toán đa thức không đơn định.
+
+  \item Đưa ra một ví dụ về bài toán thuộc cả lớp $\mathbf{P}$ và $\mathbf{NP}$.
+
+  \item Giả sử rằng bạn được đưa ra hai thuật toán để giải cùng một bài toán. Một thuật
+    toán có độ phức tạp thời gian~$n^4$ và một thuật toán có độ phức tạp~$4n$. Với kích
+    thước đầu vào như thế nào thì thuật toán đầu hiệu quả hơn thuật toán sau?
+
+  \item Giả sử rằng bạn phải đối mặt với bài toán người bán hàng du lịch trong trường hợp
+    số thành phố là $15$ trong đó giữa mọi cặp thành phố đều nối trực tiếp với nhau bởi
+    một con đường duy nhất. Có bao nhiêu đường đi khác nhau có thể có đi qua các thành phố
+    này? Ta mất bao lâu để tính độ dài của mọi đường đi này biết rằng việc tính độ dài của
+    một đường đi mất một micro-giây?
+
+  \item Hãy đưa ra một ví dụ cho mỗi bài toán thuộc một phạm vi biểu diễn trong
+    Hình~\ref{fig:fig1112}.
+
+  \item Thiết kế một thuật toán tìm nghiệm nguyên của phương trình có dạng $x^2 + y^2 =
+    n$, với $n$ là một số nguyên được đưa vào. Xác định độ phức tạp thời gian thuật toán
+    của bạn.
+
+  \item \label{ex:1145} Một bài toán khác cũng thuộc lớp NP đầy đủ là \textbf{bài toán
+      sắp ba lô} (Knapsack problem). Bài toán này yêu cầu tìm các số trong danh sách sao
+    cho tổng của các số này bằng một giá trị đặc biệt. Ví dụ, ba số $257, 388$ và~$782$
+    trong danh sách
+    \[
+    642, 257, 771, 388, 391, 782, 304
+    \]
+    có tổng là $1427$. Hãy tìm các số trong danh sách sao cho tổng của chúng là
+    $1723$. Bạn áp dụng thuật toán nào? và độ phức tạp của nó là gì?
+
+  \item Hãy xác định điểm tương đồng giữa bài toán người bán hàng du lịch và bài toán sắp
+    ba lô (xem bài tập~\ref{ex:1145}).
+  \end{enumerate}
+
+  
+\end{multicols}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

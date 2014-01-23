@@ -1,0 +1,15 @@
+
+\chapter{Hệ Điều Hành}
+\label{chap:4}
+
+Trong chương này, chúng ta sẽ xem xét khái niệm Hệ Điều Hành, là một tập các gói phần mềm
+để điều phối các hoạt động bên trong của máy cũng như để truyền thông với thế giới bên
+ngoài. Hệ điều hành biến đổi phần cứng máy tính thành các công cụ có ích. Mục đích của
+chúng ta là tìm hiểu xem hệ điều hành làm những gì và làm như thế nào. Với cơ sở như vậy
+là trung để làm sáng tỏ cho người sử dụng máy tính.
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

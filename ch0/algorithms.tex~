@@ -1,0 +1,66 @@
+\section{Khoa học Thuật toán}
+Các điều kiện như khả năng lưu trữ bị giới hạn và rắc rối, các thủ tục
+lập trình bị hạn chế về độ phức tạp và giới hạn thời gian của thuật
+toán đã được sử dụng trong các máy tính toán trước đây. Tuy nhiên, vì
+các giới hạn này đã dần biết mất, các máy đã được ứng dụng cho các
+nhiệm vụ lớn hơn và phức tạp hơn. Vì các cố gắng giải thích sự cấu
+thành của các nhiệm vụ này dưới dạng thuật toán đã bắt đầu thử thách
+năng lực nhận thức của con người, ngày càng có nhiều các nỗ lực nghiên
+cứu trực tiếp hướng tới việc tìm hiểu các thuật toán và quá trình lập
+trình.
+
+Chính trong ngữ cảnh này các kết quả lý thuyết của các nhà toán học
+bắt đầu mới thể hiện tầm quan trong của nó. Nhờ định lý về tính không
+toàn vẹn của G\"odel, các nhà toán học đã có thể sẵn sàng thảo luận
+các câu hỏi liên quan đến quá trình thuật toán nảy sinh từ công nghệ
+cao. Cùng với nó, nổi lên một nghành khoa học mới, gọi là \textit{khoa
+  học máy tính}.
+
+Ngày nay, khoa học máy tính được thiết lập tự bản thân nó như là khoa
+học về thuật toán. Phạm vi của nghành khoa học này rất rộng, từ những
+chủ đề đa dạng như toán học, công nghệ, dạng như toán học, kỹ thuật,
+tâm lý học, sinh học, quản trị kinh doanh, và ngôn ngữ học. Trong các
+chương sau, chúng ta sẽ thảo luận nhiều chủ đề của nghành khoa học
+này. Trong mỗi trường hợp, mục đích của chúng ta sẽ là giới thiệu các
+ý tưởng trung tâm trong chủ đề, các chủ đề nghiên cứu hiện hành, và
+một vài kỹ thuật đang được áp dụng để nâng cao tri thức trong lĩnh
+vực.
+
+Bởi vì chúng ta tiến triển qua việc nghiên cứu của chúng ta, nó dễ mất
+dấu của hình ảnh tổng thể. Vậy chúng ta tạm dừng lại để suy ngẫm một
+vài câu hỏi xác định khoa học tính toán nhằm có được sự tập trung cho
+các nghiên cứu của nó.
+
+\begin{figure}[tb] 
+\centering
+    \scalebox{0.4}{\includegraphics{ch0/fig05.pdf}}
+\caption{Vai trò trung tâm của thuật toán trong khoa học máy tính}
+  \label{fig:fig0.5}
+\end{figure}
+
+\begin{itemize}
+\item Những bài toán nào có thể được giải bằng quá trình thuật toán?
+
+\item Làm thế nào có thể việc tìm kiếm thuật toán được thực hiện dễ
+  dàng hơn?
+
+\item Làm thế nào để cải thiện kỹ thuật biểu diễn và giao tiếp các
+  thuật toán?  
+
+\item Làm thế để đưa cho máy tốt hơn các kiến thức về thuật toán và
+  công nghệ của chúng ta?
+
+\item Làm thế nào có thể phân tích và so sánh các đặc trưng khác nhau
+  của các thuật toán khác nhau?
+\end{itemize}
+
+Chú ý rằng chủ đề chung cho mọi câu hỏi này là nghiên cứu thuật
+toán~(Hình~\ref{fig:fig0.5})
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tindaicuong"
+%%% End: 

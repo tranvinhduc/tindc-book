@@ -1,0 +1,30 @@
+\setlength{\unitlength}{10pt}
+\begin{picture}(30,10)(1,10)
+
+\put(25, 15.5){\textbf{Dạng bít}}
+\put(25, 11.5){\textbf{Dạng hexa}}
+
+\put(4.5, 18.5){Op-code}
+\put(5,15) {\framebox (3,2){$0011$}}
+\put(6.5,14.5){\vector(0,-1){1.5}}
+\put(6.3,11.5) {$3$}
+
+
+\put(10,15){\framebox (3,2){$0101$}}
+\put(11.5,14.5){\vector(0,-1){1.5}}
+\put(11.3,11.5) {$5$}
+
+
+\put(15,15){\framebox (3,2){$1010$}}
+\put(16.5,14.5){\vector(0,-1){1.5}}
+\put(16.3,11.5) {$A$}
+
+\put(20,15){\framebox (3,2){$0111$}}
+\put(21.5,14.5){\vector(0,-1){1.5}}
+\put(21.3,11.5) {$7$}
+
+
+\put(12,17.5){\line(1,0){10}}
+\put(14, 18.5){Toán hạng}
+
+\end{picture}
